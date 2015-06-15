@@ -334,7 +334,7 @@ http://en.wikipedia.org/w/index.php?title=Template:Beltasteroid-stub&amp;action=
 }}</text></revision></page><page><title>Mapping en:England-politician-stub</title><ns>204</ns><id>8327</id><revision><id>29007</id><timestamp>2013-12-18T08:41:33Z</timestamp><text>{{TemplateMapping | mapToClass = Politician}}</text></revision></page><page><title>Mapping en:England-writer-stub</title><ns>204</ns><id>8236</id><revision><id>28837</id><timestamp>2013-11-26T13:59:00Z</timestamp><text>{{TemplateMapping | mapToClass = Writer
 | mappings = {{ConstantMapping | ontologyProperty = country | value = United Kingdom }}
 | mappings = {{ConstantMapping | ontologyProperty = country | value = England }}
-}}</text></revision></page><page><title>Mapping en:Entomologist-stub</title><ns>204</ns><id>8341</id><revision><id>29022</id><timestamp>2013-12-18T08:55:36Z</timestamp><text>{{TemplateMapping | mapToClass = Entomologist}}</text></revision></page><page><title>Mapping en:Equestrian-bio-stub</title><ns>204</ns><id>8400</id><revision><id>29084</id><timestamp>2013-12-18T15:28:09Z</timestamp><text>{{TemplateMapping | mapToClass = HorseRider}}</text></revision></page><page><title>Mapping en:Extrasolar-planet-stub</title><ns>204</ns><id>8324</id><revision><id>29004</id><timestamp>2013-12-18T08:39:46Z</timestamp><text>{{TemplateMapping | mapToClass = Planet}}</text></revision></page><page><title>Mapping en:Fashion-bio-stub</title><ns>204</ns><id>8188</id><revision><id>28781</id><timestamp>2013-11-26T09:01:40Z</timestamp><text>{{TemplateMapping | mapToClass = FashionDesigner }}</text></revision></page><page><title>Mapping en:Fashion-stub</title><ns>204</ns><id>8352</id><revision><id>29033</id><timestamp>2013-12-18T09:11:04Z</timestamp><text>{{TemplateMapping | mapToClass = Fashion}}</text></revision></page><page><title>Mapping en:Film date</title><ns>204</ns><id>11039</id><revision><id>45395</id><timestamp>2015-02-18T16:30:54Z</timestamp><text>{{TemplateMapping | mapToClass = Film | mappings =
+}}</text></revision></page><page><title>Mapping en:Entomologist-stub</title><ns>204</ns><id>8341</id><revision><id>29022</id><timestamp>2013-12-18T08:55:36Z</timestamp><text>{{TemplateMapping | mapToClass = Entomologist}}</text></revision></page><page><title>Mapping en:Equestrian-bio-stub</title><ns>204</ns><id>8400</id><revision><id>48299</id><timestamp>2015-05-25T15:30:43Z</timestamp><text>{{TemplateMapping | mapToClass = HorseRider}}</text></revision></page><page><title>Mapping en:Extrasolar-planet-stub</title><ns>204</ns><id>8324</id><revision><id>29004</id><timestamp>2013-12-18T08:39:46Z</timestamp><text>{{TemplateMapping | mapToClass = Planet}}</text></revision></page><page><title>Mapping en:Fashion-bio-stub</title><ns>204</ns><id>8188</id><revision><id>28781</id><timestamp>2013-11-26T09:01:40Z</timestamp><text>{{TemplateMapping | mapToClass = FashionDesigner }}</text></revision></page><page><title>Mapping en:Fashion-stub</title><ns>204</ns><id>8352</id><revision><id>29033</id><timestamp>2013-12-18T09:11:04Z</timestamp><text>{{TemplateMapping | mapToClass = Fashion}}</text></revision></page><page><title>Mapping en:Film date</title><ns>204</ns><id>11039</id><revision><id>45395</id><timestamp>2015-02-18T16:30:54Z</timestamp><text>{{TemplateMapping | mapToClass = Film | mappings =
   {{ PropertyMapping | templateProperty = 1 | ontologyProperty = releaseDate }}
   {{ PropertyMapping | templateProperty = 4 | ontologyProperty = releaseLocation | transform = internal }}
   {{ PropertyMapping | templateProperty = 6 | ontologyProperty = releaseDate }}
@@ -4289,12 +4289,12 @@ http://en.wikipedia.org/wiki/Template:Infobox_Christian_leader --&gt;
 	{{PropertyMapping | templateProperty = area_km2 | ontologyProperty = areaTotal | unit = squareKilometre }}
 	{{PropertyMapping | templateProperty = density_km2 | ontologyProperty = populationDensity | unit = inhabitantsPerSquareKilometre }}
 	{{GeocoordinatesMapping | latitudeDegrees = latd  | latitudeMinutes = latm  | latitudeSeconds = lats  | latitudeDirection = latNS  | longitudeDegrees = longd  | longitudeMinutes = longm  | longitudeSeconds = longs  | longitudeDirection = longEW }}
-}}</text></revision></page><page><title>Mapping en:Infobox GAA player</title><ns>204</ns><id>105</id><revision><id>27502</id><timestamp>2013-07-13T19:42:16Z</timestamp><text>{{TemplateMapping
+}}</text></revision></page><page><title>Mapping en:Infobox GAA player</title><ns>204</ns><id>105</id><revision><id>47828</id><timestamp>2015-04-28T16:09:27Z</timestamp><text>{{TemplateMapping
 | mapToClass = GaelicGamesPlayer
 | mappings =
 	{{PropertyMapping | templateProperty = sport | ontologyProperty = sport }}
 	{{PropertyMapping | templateProperty = name | ontologyProperty = foaf:name }}
-	{{PropertyMapping | templateProperty = irish | ontologyProperty = foaf:name | comment = "@ga"}}
+	{{PropertyMapping | templateProperty = irish | ontologyProperty = foaf:name | language = ga}}
 	{{PropertyMapping | templateProperty = fullname | ontologyProperty = foaf:name }}
 	{{PropertyMapping | templateProperty = placeofbirth | ontologyProperty = birthPlace }}
 	{{PropertyMapping | templateProperty = dob | ontologyProperty = birthDate }}
@@ -7481,13 +7481,13 @@ http://en.wikipedia.org/wiki/Template:Infobox_Christian_leader --&gt;
 	{{PropertyMapping | templateProperty = area_km2 | ontologyProperty = areaTotal | unit = squareKilometre }}
 	{{PropertyMapping | templateProperty = density_km2 | ontologyProperty = populationDensity | unit = inhabitantsPerSquareKilometre }}
 	{{GeocoordinatesMapping | latitudeDegrees = latd  | latitudeMinutes = latm  | latitudeSeconds = lats  | latitudeDirection = latNS  | longitudeDegrees = longd  | longitudeMinutes = longm  | longitudeSeconds = longs  | longitudeDirection = longEW }}
-}}</text></revision></page><page><title>Mapping en:Infobox MLB</title><ns>204</ns><id>9561</id><revision><id>35412</id><timestamp>2014-06-23T10:14:03Z</timestamp><text>{{TemplateMapping 
+}}</text></revision></page><page><title>Mapping en:Infobox MLB</title><ns>204</ns><id>9561</id><revision><id>47865</id><timestamp>2015-05-09T08:01:50Z</timestamp><text>{{TemplateMapping 
 | mapToClass = BaseballTeam 
 | mappings = 
    {{ PropertyMapping | templateProperty = owner | ontologyProperty = owner }}
 {{ PropertyMapping | templateProperty = manager | ontologyProperty = manager }}
    {{ PropertyMapping | templateProperty = name | ontologyProperty = foaf:name }}
-   {{ PropertyMapping | templateProperty = established | ontologyProperty = foundationDate }}
+   {{ PropertyMapping | templateProperty = established | ontologyProperty = foundingDate }}
 
 }}</text></revision></page><page><title>Mapping en:Infobox MLB player</title><ns>204</ns><id>146</id><revision><id>14666</id><timestamp>2011-07-29T12:06:12Z</timestamp><text>{{TemplateMapping
 | mapToClass = BaseballPlayer
@@ -8566,10 +8566,10 @@ http://en.wikipedia.org/wiki/Template:Infobox_Christian_leader --&gt;
 	{{CalculateMapping | operation = add | templateProperty1 = height_ft  | unit1 = foot  | templateProperty2 = height_in  | unit2 = inch  | ontologyProperty = height }}
 	{{PropertyMapping | templateProperty = career_start | ontologyProperty = activeYearsStartYear }}
 	{{PropertyMapping | templateProperty = career_end | ontologyProperty = activeYearsEndYear}}
-}}</text></revision></page><page><title>Mapping en:Infobox NCAA team season</title><ns>204</ns><id>6072</id><revision><id>20554</id><timestamp>2012-12-22T11:27:27Z</timestamp><text>{{TemplateMapping
+}}</text></revision></page><page><title>Mapping en:Infobox NCAA team season</title><ns>204</ns><id>6072</id><revision><id>47900</id><timestamp>2015-05-12T11:47:23Z</timestamp><text>{{TemplateMapping
 | mapToClass = NCAATeamSeason
 | mappings =
-	{{PropertyMapping | templateProperty = Team | ontologyProperty = team }} 
+&lt;!--	{{PropertyMapping | templateProperty = Team | ontologyProperty = team }} --&gt;
         {{PropertyMapping | templateProperty = HeadCoach | ontologyProperty = coach }}
         {{PropertyMapping | templateProperty = Year | ontologyProperty = year }}
 }}</text></revision></page><page><title>Mapping en:Infobox NFL coach</title><ns>204</ns><id>7989</id><revision><id>28093</id><timestamp>2013-08-28T08:10:48Z</timestamp><text>{{TemplateMapping | mapToClass = AmericanFootballCoach 
@@ -8662,11 +8662,11 @@ http://en.wikipedia.org/wiki/Template:Infobox_Christian_leader --&gt;
 	{{PropertyMapping | templateProperty = weight | ontologyProperty = weight | unit = pound }}
 	{{CalculateMapping | operation = add | templateProperty1 = Height_ft  | unit1 = foot  | templateProperty2 = Height_in  | unit2 = inch  | ontologyProperty = height }}
 	{{CalculateMapping | operation = add | templateProperty1 = heightft  | unit1 = foot  | templateProperty2 = heightin  | unit2 = inch  | ontologyProperty = height }}
-}}</text></revision></page><page><title>Mapping en:Infobox NFL season</title><ns>204</ns><id>6080</id><revision><id>20569</id><timestamp>2012-12-22T12:21:00Z</timestamp><text>{{TemplateMapping
+}}</text></revision></page><page><title>Mapping en:Infobox NFL season</title><ns>204</ns><id>6080</id><revision><id>47895</id><timestamp>2015-05-12T11:35:30Z</timestamp><text>{{TemplateMapping
 | mapToClass = NationalFootballLeagueSeason
 | mappings =
 	{{PropertyMapping | templateProperty = coach             | ontologyProperty = coach }} 
-	{{PropertyMapping | templateProperty = team             | ontologyProperty = team }} 
+&lt;!--	{{PropertyMapping | templateProperty = team             | ontologyProperty = team }} --&gt;
 	{{PropertyMapping | templateProperty = year             | ontologyProperty = year }} 
 	{{PropertyMapping | templateProperty = next             | ontologyProperty = successor }} 
 	{{PropertyMapping | templateProperty = previous             | ontologyProperty = predecessor }} 
@@ -16579,44 +16579,44 @@ http://en.wikipedia.org/wiki/Template:Infobox_Christian_leader --&gt;
 	&lt;!-- {{ PropertyMapping | templateProperty = relations | ontologyProperty = }} --&gt;
 	&lt;!-- {{ PropertyMapping | templateProperty = signature_alt | ontologyProperty = }} --&gt;
 	&lt;!-- {{ PropertyMapping | templateProperty = subject_name | ontologyProperty = }} --&gt;
-}}</text></revision></page><page><title>Mapping en:Infobox college athletics</title><ns>204</ns><id>8172</id><revision><id>28757</id><timestamp>2013-11-21T13:04:54Z</timestamp><text>{{TemplateMapping | mapToClass = SportsTeam
+}}</text></revision></page><page><title>Mapping en:Infobox college athletics</title><ns>204</ns><id>8172</id><revision><id>47899</id><timestamp>2015-05-12T11:44:43Z</timestamp><text>{{TemplateMapping | mapToClass = SportsTeam
 | mappings = 
-	&lt;!-- {{ PropertyMapping | templateProperty = conference | ontologyProperty = conference }} --&gt;
-	&lt;!-- {{ PropertyMapping | templateProperty = division | ontologyProperty = }} --&gt;
+&lt;!-- {{ PropertyMapping | templateProperty = conference | ontologyProperty = conference }} --&gt;
+&lt;!-- {{ PropertyMapping | templateProperty = division | ontologyProperty = }} --&gt;
 	{{ PropertyMapping | templateProperty = nickname | ontologyProperty = foaf:nick }}
 	{{ PropertyMapping | templateProperty = name | ontologyProperty = foaf:name }}
 	{{ PropertyMapping | templateProperty = arena | ontologyProperty = stadium }}
 	{{ PropertyMapping | templateProperty = pageurl | ontologyProperty = foaf:homepage }}
 	{{ PropertyMapping | templateProperty = city | ontologyProperty = city }}
-	&lt;!-- {{ PropertyMapping | templateProperty = color1 | ontologyProperty = }} --&gt;
-	&lt;!-- {{ PropertyMapping | templateProperty = state | ontologyProperty = }} --&gt;
-	&lt;!-- {{ PropertyMapping | templateProperty = stateabb | ontologyProperty = }} --&gt;
+&lt;!-- {{ PropertyMapping | templateProperty = color1 | ontologyProperty = }} --&gt;
+&lt;!-- {{ PropertyMapping | templateProperty = state | ontologyProperty = }} --&gt;
+&lt;!-- {{ PropertyMapping | templateProperty = stateabb | ontologyProperty = }} --&gt;
 	{{ PropertyMapping | templateProperty = university | ontologyProperty = university }}
-	&lt;!-- {{ PropertyMapping | templateProperty = pagename | ontologyProperty = }} --&gt;
-	&lt;!-- {{ PropertyMapping | templateProperty = color2 | ontologyProperty = }} --&gt;
-	&lt;!-- {{ PropertyMapping | templateProperty = hex1 | ontologyProperty = }} --&gt;
+&lt;!-- {{ PropertyMapping | templateProperty = pagename | ontologyProperty = }} --&gt;
+&lt;!-- {{ PropertyMapping | templateProperty = color2 | ontologyProperty = }} --&gt;
+&lt;!-- {{ PropertyMapping | templateProperty = hex1 | ontologyProperty = }} --&gt;
 	{{ PropertyMapping | templateProperty = director | ontologyProperty = director }}
-	{{ PropertyMapping | templateProperty = teams | ontologyProperty = team }}
-	&lt;!-- {{ PropertyMapping | templateProperty = hex2 | ontologyProperty = }} --&gt;
-	&lt;!-- {{ PropertyMapping | templateProperty = logo | ontologyProperty = }} --&gt;
+&lt;!-- {{ PropertyMapping | templateProperty = teams | ontologyProperty = }} --&gt;
+&lt;!-- {{ PropertyMapping | templateProperty = hex2 | ontologyProperty = }} --&gt;
+&lt;!-- {{ PropertyMapping | templateProperty = logo | ontologyProperty = }} --&gt;
 	{{ PropertyMapping | templateProperty = stadium | ontologyProperty = stadium }}
 	{{ PropertyMapping | templateProperty = baseballfield | ontologyProperty = stadium }}
 	{{ PropertyMapping | templateProperty = mascot | ontologyProperty = mascot }}
-	&lt;!-- {{ PropertyMapping | templateProperty = fightsong | ontologyProperty = }} --&gt;
-	&lt;!-- {{ PropertyMapping | templateProperty = logo_width | ontologyProperty = }} --&gt;
-	&lt;!-- {{ PropertyMapping | templateProperty = arena2 | ontologyProperty = }} --&gt;
-	&lt;!-- {{ PropertyMapping | templateProperty = association | ontologyProperty = }} --&gt;
+&lt;!-- {{ PropertyMapping | templateProperty = fightsong | ontologyProperty = }} --&gt;
+&lt;!-- {{ PropertyMapping | templateProperty = logo_width | ontologyProperty = }} --&gt;
+&lt;!-- {{ PropertyMapping | templateProperty = arena2 | ontologyProperty = }} --&gt;
+&lt;!-- {{ PropertyMapping | templateProperty = association | ontologyProperty = }} --&gt;
         {{ PropertyMapping | templateProperty = soccerstadium | ontologyProperty = stadium }}
-	&lt;!-- {{ PropertyMapping | templateProperty = color3 | ontologyProperty = }} --&gt;
-	&lt;!-- {{ PropertyMapping | templateProperty = hex3 | ontologyProperty = }} --&gt;
+&lt;!-- {{ PropertyMapping | templateProperty = color3 | ontologyProperty = }} --&gt;
+&lt;!-- {{ PropertyMapping | templateProperty = hex3 | ontologyProperty = }} --&gt;
 	{{ PropertyMapping | templateProperty = lacrossestadium | ontologyProperty = stadium }}
 	{{ PropertyMapping | templateProperty = softballstadium | ontologyProperty = stadium }}
-	&lt;!-- {{ PropertyMapping | templateProperty = cheer | ontologyProperty = }} --&gt;
-	&lt;!-- {{ PropertyMapping | templateProperty = icehockeyarena | ontologyProperty = }} --&gt;
-	&lt;!-- {{ PropertyMapping | templateProperty = symbol | ontologyProperty = }} --&gt;
-	&lt;!-- {{ PropertyMapping | templateProperty = altlogo | ontologyProperty = }} --&gt;
-	&lt;!-- {{ PropertyMapping | templateProperty = color4 | ontologyProperty = }} --&gt;
-	&lt;!-- {{ PropertyMapping | templateProperty = hex4 | ontologyProperty = }} --&gt;
+&lt;!-- {{ PropertyMapping | templateProperty = cheer | ontologyProperty = }} --&gt;
+	{{ PropertyMapping | templateProperty = icehockeyarena | ontologyProperty = stadium }}
+&lt;!-- {{ PropertyMapping | templateProperty = symbol | ontologyProperty = }} --&gt;
+&lt;!-- {{ PropertyMapping | templateProperty = altlogo | ontologyProperty = }} --&gt;
+&lt;!-- {{ PropertyMapping | templateProperty = color4 | ontologyProperty = }} --&gt;
+&lt;!-- {{ PropertyMapping | templateProperty = hex4 | ontologyProperty = }} --&gt;
 }}</text></revision></page><page><title>Mapping en:Infobox college coach</title><ns>204</ns><id>1661</id><revision><id>23579</id><timestamp>2013-01-26T11:29:56Z</timestamp><text>{{TemplateMapping
 | mapToClass = CollegeCoach
 | mappings =
@@ -17295,6 +17295,33 @@ http://en.wikipedia.org/wiki/Template:Infobox_Christian_leader --&gt;
         {{PropertyMapping | templateProperty = density | ontologyProperty = density }}
 	{{PropertyMapping | templateProperty = image | ontologyProperty = image}}
         
+}}</text></revision></page><page><title>Mapping en:Infobox earthquake</title><ns>204</ns><id>11243</id><revision><id>47891</id><timestamp>2015-05-12T11:17:26Z</timestamp><text>{{TemplateMapping
+| mapToClass = Earthquake
+| mappings =
+	{{PropertyMapping | templateProperty = name | ontologyProperty = foaf:name }}
+	{{PropertyMapping | templateProperty = image | ontologyProperty = foaf:depiction }}
+&lt;!--	{{PropertyMapping | templateProperty = alt | ontologyProperty = }} --&gt;
+&lt;!--	{{PropertyMapping | templateProperty = caption | ontologyProperty = }} --&gt;
+&lt;!--	{{PropertyMapping | templateProperty = map | ontologyProperty = }} --&gt;
+&lt;!--	{{PropertyMapping | templateProperty = map_alt | ontologyProperty = }} --&gt;
+&lt;!--	{{PropertyMapping | templateProperty = map_caption | ontologyProperty = }} --&gt;
+&lt;!--	{{PropertyMapping | templateProperty = map2 | ontologyProperty = }} --&gt;
+	{{PropertyMapping | templateProperty = date | ontologyProperty = date }}
+	{{PropertyMapping | templateProperty = time | ontologyProperty = time }}
+	{{PropertyMapping | templateProperty = duration | ontologyProperty = duration }}
+&lt;!--	{{PropertyMapping | templateProperty = magnitude | ontologyProperty = }} --&gt;
+&lt;!--	{{PropertyMapping | templateProperty = depth | ontologyProperty = }} --&gt;
+	{{PropertyMapping | templateProperty = location | ontologyProperty = location }}
+&lt;!--	{{PropertyMapping | templateProperty = type | ontologyProperty = }} --&gt;
+&lt;!--	{{PropertyMapping | templateProperty = affected | ontologyProperty = }} --&gt;
+	{{PropertyMapping | templateProperty = damages | ontologyProperty = damage }}
+&lt;!--	{{PropertyMapping | templateProperty = intensity | ontologyProperty = }} --&gt;
+&lt;!--	{{PropertyMapping | templateProperty = pga | ontologyProperty = }} --&gt;
+&lt;!--	{{PropertyMapping | templateProperty = tsunami | ontologyProperty = }} --&gt;
+&lt;!--	{{PropertyMapping | templateProperty = landslide | ontologyProperty = }} --&gt;
+&lt;!--	{{PropertyMapping | templateProperty = foreshocks | ontologyProperty = }} --&gt;
+&lt;!--	{{PropertyMapping | templateProperty = aftershocks | ontologyProperty = }} --&gt;
+	{{PropertyMapping | templateProperty = casualties | ontologyProperty = casualties }}
 }}</text></revision></page><page><title>Mapping en:Infobox economist</title><ns>204</ns><id>6146</id><revision><id>20700</id><timestamp>2012-12-23T12:12:42Z</timestamp><text>{{TemplateMapping
 | mapToClass = Economist
 | mappings =
@@ -17870,7 +17897,7 @@ http://en.wikipedia.org/wiki/Template:Infobox_Christian_leader --&gt;
 	{{PropertyMapping | templateProperty = prevseason          | ontologyProperty = predecessor }} 
 	{{PropertyMapping | templateProperty = nextseason          | ontologyProperty = successor }} 
 
-}}</text></revision></page><page><title>Mapping en:Infobox football league</title><ns>204</ns><id>7317</id><revision><id>26078</id><timestamp>2013-06-14T17:06:33Z</timestamp><text>{{TemplateMapping
+}}</text></revision></page><page><title>Mapping en:Infobox football league</title><ns>204</ns><id>7317</id><revision><id>47897</id><timestamp>2015-05-12T11:37:54Z</timestamp><text>{{TemplateMapping
 | mapToClass = SoccerLeague
 | mappings =
 	{{PropertyMapping | templateProperty = name | ontologyProperty = foaf:name }}
@@ -17879,8 +17906,8 @@ http://en.wikipedia.org/wiki/Template:Infobox_Christian_leader --&gt;
 	{{PropertyMapping | templateProperty = founded | ontologyProperty = formationDate }}
 	{{PropertyMapping | templateProperty = teams | ontologyProperty = numberOfTeams }}
 	{{PropertyMapping | templateProperty = country | ontologyProperty = country }}
-	{{PropertyMapping | templateProperty = champions | ontologyProperty = team }}
-	{{PropertyMapping | templateProperty = most_champs | ontologyProperty = team }}
+	{{PropertyMapping | templateProperty = champions | ontologyProperty = participant }}
+	{{PropertyMapping | templateProperty = most_champs | ontologyProperty = participant }}
 	{{PropertyMapping | templateProperty = website | ontologyProperty = foaf:homepage }}
 }}</text></revision></page><page><title>Mapping en:Infobox football league season</title><ns>204</ns><id>6074</id><revision><id>20556</id><timestamp>2012-12-22T11:46:15Z</timestamp><text>{{TemplateMapping
 | mapToClass = FootballLeagueSeason
@@ -18418,11 +18445,11 @@ http://en.wikipedia.org/wiki/Template:Infobox_Christian_leader --&gt;
 	{{PropertyMapping | templateProperty = location | ontologyProperty = location }}
 	{{PropertyMapping | templateProperty = latitude | ontologyProperty = geo:lat }}
 	{{PropertyMapping | templateProperty = longitude | ontologyProperty = geo:long }}
-}}</text></revision></page><page><title>Mapping en:Infobox hockey team</title><ns>204</ns><id>6185</id><revision><id>20777</id><timestamp>2012-12-23T15:27:17Z</timestamp><text>{{TemplateMapping
+}}</text></revision></page><page><title>Mapping en:Infobox hockey team</title><ns>204</ns><id>6185</id><revision><id>47892</id><timestamp>2015-05-12T11:28:19Z</timestamp><text>{{TemplateMapping
 | mapToClass = HockeyTeam
 | mappings =
 	{{PropertyMapping | templateProperty = city | ontologyProperty = city }}
-	{{PropertyMapping | templateProperty = team | ontologyProperty = team }}
+&lt;!--	{{PropertyMapping | templateProperty = team | ontologyProperty = team }} --&gt;
 	{{PropertyMapping | templateProperty = logo | ontologyProperty = foaf:logo }}
 	{{PropertyMapping | templateProperty = coach | ontologyProperty = coach }}
 	{{PropertyMapping | templateProperty = website | ontologyProperty = foaf:homepage }}
@@ -24916,7 +24943,7 @@ Template Properties not mapped yet:
  {{PropertyMapping | templateProperty = category | ontologyProperty = category}}
 &lt;!-- {{PropertyMapping | templateProperty = first | ontologyProperty = firstPlayed}} --&gt;
  {{PropertyMapping | templateProperty = union | ontologyProperty = sportGoverningBody }}
-}}</text></revision></page><page><title>Mapping en:Infobox sports league</title><ns>204</ns><id>2189</id><revision><id>26079</id><timestamp>2013-06-14T17:11:25Z</timestamp><text>{{ConditionalMapping
+}}</text></revision></page><page><title>Mapping en:Infobox sports league</title><ns>204</ns><id>2189</id><revision><id>47910</id><timestamp>2015-05-18T12:15:01Z</timestamp><text>{{ConditionalMapping
 | cases =
  {{Condition
     | templateProperty = sport
@@ -25231,28 +25258,60 @@ Template Properties not mapped yet:
 	{{PropertyMapping | templateProperty = fame | ontologyProperty = knownFor }}
 	{{PropertyMapping | templateProperty = motto | ontologyProperty = motto }}
 	{{PropertyMapping | templateProperty = inaugural | ontologyProperty = foundingYear }}
-	{{PropertyMapping | templateProperty = teams | ontologyProperty = team }}
+	{{PropertyMapping | templateProperty = teams | ontologyProperty = participant }}
 	{{PropertyMapping | templateProperty = country | ontologyProperty = country }}
-	{{PropertyMapping | templateProperty = champion | ontologyProperty = team }}
-	{{PropertyMapping | templateProperty = most_champs | ontologyProperty = team }}
+	{{PropertyMapping | templateProperty = champion | ontologyProperty = participant }}
+	{{PropertyMapping | templateProperty = most_champs | ontologyProperty = participant }}
 	{{PropertyMapping | templateProperty = founder | ontologyProperty = foundingPerson }}
 	{{PropertyMapping | templateProperty = ceo | ontologyProperty = ceo }}
 	{{PropertyMapping | templateProperty = Director | ontologyProperty = director }}
 	{{PropertyMapping | templateProperty = website | ontologyProperty = foaf:homepage }}
-}}</text></revision></page><page><title>Mapping en:Infobox sports team</title><ns>204</ns><id>6092</id><revision><id>20674</id><timestamp>2012-12-23T11:45:33Z</timestamp><text>{{TemplateMapping
+}}</text></revision></page><page><title>Mapping en:Infobox sports team</title><ns>204</ns><id>6092</id><revision><id>47901</id><timestamp>2015-05-12T12:05:15Z</timestamp><text>{{TemplateMapping
 | mapToClass = SportsTeam
 | mappings =
-    {{PropertyMapping | templateProperty = city | ontologyProperty = city }}
-    {{PropertyMapping | templateProperty = team | ontologyProperty = team }}
-    {{PropertyMapping | templateProperty = league | ontologyProperty = league }}
-    {{PropertyMapping | templateProperty = founded | ontologyProperty = foundingYear }}
+    {{PropertyMapping | templateProperty = name | ontologyProperty = foaf:name }}
+    {{PropertyMapping | templateProperty = color1 | ontologyProperty = colour }}
+    {{PropertyMapping | templateProperty = color2 | ontologyProperty = colour }}
     {{PropertyMapping | templateProperty = logo | ontologyProperty = logo }}
-    {{PropertyMapping | templateProperty = coach | ontologyProperty = coach }}
-    {{PropertyMapping | templateProperty = owner | ontologyProperty = owner }}
-    {{PropertyMapping | templateProperty = website | ontologyProperty = foaf:homepage }}
-    {{PropertyMapping | templateProperty = mascot | ontologyProperty = mascot }}
-    {{PropertyMapping | templateProperty = president | ontologyProperty = manager }}
+&lt;!--    {{PropertyMapping | templateProperty = logo_size | ontologyProperty = }} --&gt;
+&lt;!--    {{PropertyMapping | templateProperty = alt | ontologyProperty = }} --&gt;
+&lt;!--    {{PropertyMapping | templateProperty = caption | ontologyProperty = }} --&gt;
+    {{PropertyMapping | templateProperty = full_name | ontologyProperty = foaf:name }}
+    {{PropertyMapping | templateProperty = nicknames | ontologyProperty = foaf:nick }}
+    {{PropertyMapping | templateProperty = sport | ontologyProperty = sport }}
+    {{PropertyMapping | templateProperty = founded | ontologyProperty = foundingYear }}
+&lt;!--    {{PropertyMapping | templateProperty = folded | ontologyProperty = }} --&gt;
+&lt;!--    {{PropertyMapping | templateProperty = current | ontologyProperty = }} --&gt;
+    {{PropertyMapping | templateProperty = league | ontologyProperty = league }}
+&lt;!--    {{PropertyMapping | templateProperty = conference | ontologyProperty = }} --&gt;
+    {{PropertyMapping | templateProperty = division | ontologyProperty = division }}
+&lt;!--    {{PropertyMapping | templateProperty = history | ontologyProperty = }} --&gt;
+    {{PropertyMapping | templateProperty = arena | ontologyProperty = stadium }}
+    {{PropertyMapping | templateProperty = ballpark | ontologyProperty = stadium }}
     {{PropertyMapping | templateProperty = stadium | ontologyProperty = stadium }}
+    {{PropertyMapping | templateProperty = city | ontologyProperty = city }}
+    {{PropertyMapping | templateProperty = colors | ontologyProperty = colour }}
+    {{PropertyMapping | templateProperty = colours | ontologyProperty = colour }}
+    {{PropertyMapping | templateProperty = owner | ontologyProperty = owner }}
+    {{PropertyMapping | templateProperty = president | ontologyProperty = president }}
+    {{PropertyMapping | templateProperty = coach | ontologyProperty = coach }}
+    {{PropertyMapping | templateProperty = manager | ontologyProperty = manager }}
+    {{PropertyMapping | templateProperty = gm | ontologyProperty = manager }}
+&lt;!--    {{PropertyMapping | templateProperty = championships | ontologyProperty = }} --&gt;
+&lt;!--    {{PropertyMapping | templateProperty = conference_titles | ontologyProperty = }} --&gt;
+&lt;!--    {{PropertyMapping | templateProperty = division_titles | ontologyProperty = }} --&gt;
+&lt;!--    {{PropertyMapping | templateProperty = playoff_berths | ontologyProperty = }} --&gt;
+    {{PropertyMapping | templateProperty = anthem | ontologyProperty = anthem }}
+&lt;!--    {{PropertyMapping | templateProperty = cheerleaders | ontologyProperty = }} --&gt;
+&lt;!--    {{PropertyMapping | templateProperty = dancers | ontologyProperty = }} --&gt;
+    {{PropertyMapping | templateProperty = mascot | ontologyProperty = mascot }}
+&lt;!--    {{PropertyMapping | templateProperty = fanclub | ontologyProperty = }} --&gt;
+&lt;!--    {{PropertyMapping | templateProperty = broadcasters | ontologyProperty = }} --&gt;
+&lt;!--    {{PropertyMapping | templateProperty = media | ontologyProperty = }} --&gt;
+&lt;!--    {{PropertyMapping | templateProperty = uniforms | ontologyProperty = }} --&gt;
+&lt;!--    {{PropertyMapping | templateProperty = branches | ontologyProperty = }} --&gt;
+&lt;!--    {{PropertyMapping | templateProperty = members | ontologyProperty = }} --&gt;
+    {{PropertyMapping | templateProperty = website | ontologyProperty = foaf:homepage }}
 }}</text></revision></page><page><title>Mapping en:Infobox sportsperson</title><ns>204</ns><id>4144</id><revision><id>16835</id><timestamp>2012-03-13T10:59:40Z</timestamp><text>{{TemplateMapping
 | mapToClass = Athlete
 | mappings =

@@ -304,69 +304,78 @@
   {{ DateIntervalMapping | templateProperty = живял
                 | startDateOntologyProperty = birthDate
                 | endDateOntologyProperty = deathDate}}
-}}</text></revision></page><page><title>Mapping bg:Геообект</title><ns>264</ns><id>5237</id><revision><id>18141</id><timestamp>2012-05-05T19:15:10Z</timestamp><text>{{ TemplateMapping | mapToClass = Place | mappings = 
+}}</text></revision></page><page><title>Mapping bg:Геообект</title><ns>264</ns><id>5237</id><revision><id>47859</id><timestamp>2015-05-07T15:09:28Z</timestamp><text>{{ TemplateMapping | mapToClass = Place | mappings = 
+  {{ PropertyMapping | templateProperty = гъстота | ontologyProperty = populationDensity | unit = PopulationDensity }}
+  {{ PropertyMapping | templateProperty = държава | ontologyProperty = country }}
+  {{ PropertyMapping | templateProperty = забележки | ontologyProperty = notes }}
+  {{ PropertyMapping | templateProperty = заселване | ontologyProperty = foundingDate }}
+  {{ PropertyMapping | templateProperty = име | ontologyProperty = foaf:name }}
+  {{ PropertyMapping | templateProperty = име-език1 | ontologyProperty = foaf:name }}
+  {{ PropertyMapping | templateProperty = име-език2 | ontologyProperty = foaf:name }}
+  {{ PropertyMapping | templateProperty = карта | ontologyProperty = map }}
+  {{ PropertyMapping | templateProperty = карта-описание | ontologyProperty = mapDescription }}
+  {{ PropertyMapping | templateProperty = карта1 | ontologyProperty = map }}
+  {{ PropertyMapping | templateProperty = карта1-описание | ontologyProperty = mapDescription }}
+  {{ PropertyMapping | templateProperty = картинка | ontologyProperty = picture }}
+  {{ PropertyMapping | templateProperty = картинка1 | ontologyProperty = picture }}
+  {{ PropertyMapping | templateProperty = картинка2 | ontologyProperty = picture }}
+  {{ PropertyMapping | templateProperty = картинка3 | ontologyProperty = picture }}
+  {{ PropertyMapping | templateProperty = картинка-описание | ontologyProperty = pictureDescription }}
+  {{ PropertyMapping | templateProperty = картинка1-описание | ontologyProperty = pictureDescription }}
+  {{ PropertyMapping | templateProperty = картинка2-описание | ontologyProperty = pictureDescription }}
+  {{ PropertyMapping | templateProperty = картинка3-описание | ontologyProperty = pictureDescription }}
+  {{ PropertyMapping | templateProperty = лидер1 | ontologyProperty = leaderName }}
+  {{ PropertyMapping | templateProperty = лидер1-титла | ontologyProperty = leaderTitle }}
+  {{ PropertyMapping | templateProperty = надм-височина | ontologyProperty = elevation | unit = metre }}
+  {{ PropertyMapping | templateProperty = надразделение1-име | ontologyProperty = isPartOf }}
+  {{ PropertyMapping | templateProperty = надразделение2-име | ontologyProperty = isPartOf }}
+  {{ PropertyMapping | templateProperty = надразделение3-име | ontologyProperty = isPartOf }}
+  {{ PropertyMapping | templateProperty = надразделение4-име | ontologyProperty = isPartOf }}
+  {{ PropertyMapping | templateProperty = надразделение5-име | ontologyProperty = isPartOf }}
+  {{ PropertyMapping | templateProperty = население | ontologyProperty = populationTotal }}
+  {{ PropertyMapping | templateProperty = население-към | ontologyProperty = populationAsOf }}
+  {{ PropertyMapping | templateProperty = площ  | ontologyProperty = areaTotal | unit = squareKilometre }}
+  {{ PropertyMapping | templateProperty = площ1 | ontologyProperty = areaTotal | unit = squareKilometre }}
+  {{ PropertyMapping | templateProperty = площ2 | ontologyProperty = areaTotal | unit = squareKilometre }}
+  {{ PropertyMapping | templateProperty = площ3 | ontologyProperty = areaTotal | unit = squareKilometre }}
+  {{ PropertyMapping | templateProperty = площ4 | ontologyProperty = areaTotal | unit = squareKilometre }}
+  {{ PropertyMapping | templateProperty = подразделения | ontologyProperty = part }}
+  {{ PropertyMapping | templateProperty = пощ-код | ontologyProperty = postalCode }}
+  {{ PropertyMapping | templateProperty = статут1 | ontologyProperty = status }}
+  {{ PropertyMapping | templateProperty = статут1-дата | ontologyProperty = statusYear }}
+  {{ PropertyMapping | templateProperty = статут2 | ontologyProperty = status }}
+  {{ PropertyMapping | templateProperty = статут2-дата | ontologyProperty = statusYear }}
+  {{ PropertyMapping | templateProperty = тел-код | ontologyProperty = areaCode }}
+  {{ PropertyMapping | templateProperty = тип | ontologyProperty = type }}
+  {{ PropertyMapping | templateProperty = уебсайт | ontologyProperty = foaf:homepage }}
+  {{ PropertyMapping | templateProperty = часова зона | ontologyProperty = timeZone }}
+  {{ PropertyMapping | templateProperty = часова зона-лято | ontologyProperty = daylightSavingTimeZone }}
+  {{ GeocoordinatesMapping | latitudeDegrees = гш-градуси | latitudeMinutes = гш-минути | latitudeSeconds = гш-секунди | latitudeDirection = гш-посока | longitudeDegrees = гд-градуси | longitudeMinutes = гд-минути | longitudeSeconds = гд-секунди | longitudeDirection = гд-посока }}
+}}
 
-	{{ PropertyMapping | templateProperty = карта-описание | ontologyProperty = mapDescription }}
-	{{ PropertyMapping | templateProperty = карта | ontologyProperty = map }}
-
-	{{ PropertyMapping | templateProperty = карта1-описание | ontologyProperty = mapDescription }}
-	{{ PropertyMapping | templateProperty = карта1 | ontologyProperty = map }}
-
-	{{ PropertyMapping | templateProperty = статут1 | ontologyProperty = status }}
-
-	{{ PropertyMapping | templateProperty = картинка-описание | ontologyProperty = pictureDescription }}
-	{{ PropertyMapping | templateProperty = тип | ontologyProperty = type }}
-
-
-	{{ PropertyMapping | templateProperty = държава | ontologyProperty = locationCountry }}
-	{{ PropertyMapping | templateProperty = име | ontologyProperty = foaf:name }}
-	{{ PropertyMapping | templateProperty = население | ontologyProperty = populationTotal }}
-	{{ PropertyMapping | templateProperty = площ | ontologyProperty = areaLand | unit = squareKilometre }}
-	{{ PropertyMapping | templateProperty = език1 | ontologyProperty = language }}
-	{{ PropertyMapping | templateProperty = име-език1 | ontologyProperty = language }}
-	{{ PropertyMapping | templateProperty = език1-връзка | ontologyProperty = language }}
-
-	{{ PropertyMapping | templateProperty = население-към | ontologyProperty = populationAsOf }}
-	{{ PropertyMapping | templateProperty = уебсайт | ontologyProperty = foaf:homepage }}
-
-	{{ PropertyMapping | templateProperty = пощ-код | ontologyProperty = postalCode }}
-	{{ PropertyMapping | templateProperty = тел-код | ontologyProperty = areaCode }}
-	{{ PropertyMapping | templateProperty = надм-височина | ontologyProperty = elevation | unit = metre }}
-
-	{{ PropertyMapping | templateProperty = площ-за4 | ontologyProperty = areaLand | unit = squareKilometre }}
-	{{ PropertyMapping | templateProperty = площ-за3 | ontologyProperty = areaLand | unit = squareKilometre }}
-	{{ PropertyMapping | templateProperty = площ-за2 | ontologyProperty = areaLand | unit = squareKilometre }}
-	{{ PropertyMapping | templateProperty = площ-за1 | ontologyProperty = areaLand | unit = squareKilometre }}
-	{{ PropertyMapping | templateProperty = площ4 | ontologyProperty = areaLand | unit = squareKilometre }}
-	{{ PropertyMapping | templateProperty = площ3 | ontologyProperty = areaLand | unit = squareKilometre }}
-	{{ PropertyMapping | templateProperty = площ2 | ontologyProperty = areaLand | unit = squareKilometre }}
-	{{ PropertyMapping | templateProperty = площ1 | ontologyProperty = areaLand | unit = squareKilometre }}
-
-
- 
-	{{ PropertyMapping | templateProperty = картинка | ontologyProperty = picture }}
- 
-
-	{{ PropertyMapping | templateProperty = надразделение5-име | ontologyProperty = region }}
-	{{ PropertyMapping | templateProperty = надразделение5-вид | ontologyProperty = regionType }}
-
-	{{ PropertyMapping | templateProperty = надразделение4-име | ontologyProperty = region }}
-	{{ PropertyMapping | templateProperty = надразделение4-вид | ontologyProperty = regionType }}
-
-	{{ PropertyMapping | templateProperty = надразделение3-име | ontologyProperty = region }}
-	{{ PropertyMapping | templateProperty = надразделение3-вид | ontologyProperty = regionType }}
-
-	{{ PropertyMapping | templateProperty = надразделение2-име | ontologyProperty = region }}
-	{{ PropertyMapping | templateProperty = надразделение2-вид | ontologyProperty = regionType }}
-
-	{{ PropertyMapping | templateProperty = надразделение1-име | ontologyProperty = region }}
-	{{ PropertyMapping | templateProperty = надразделение1-вид | ontologyProperty = regionType }}
-
-
-
-	{{ GeocoordinatesMapping | latitudeDegrees = гш-градуси | latitudeMinutes = гш-минути | latitudeSeconds = гш-секунди | latitudeDirection = гш-посока | longitudeDegrees = гд-градуси | longitudeMinutes = гд-минути | longitudeSeconds = гд-секунди | longitudeDirection = гд-посока }}
-
-}}</text></revision></page><page><title>Mapping bg:Държава</title><ns>264</ns><id>5296</id><revision><id>18580</id><timestamp>2012-05-21T00:05:31Z</timestamp><text>{{ TemplateMapping | mapToClass = Country | mappings =
+&lt;!-- NOT MAPPED properties
+  {{ PropertyMapping | templateProperty = език1 | ontologyProperty = language }} language of the name != language of the place
+  {{ PropertyMapping | templateProperty = език1-връзка | ontologyProperty = language }}
+  {{ PropertyMapping | templateProperty = надразделение1-вид | ontologyProperty = regionType }}
+  {{ PropertyMapping | templateProperty = надразделение2-вид | ontologyProperty = regionType }}
+  {{ PropertyMapping | templateProperty = надразделение3-вид | ontologyProperty = regionType }}
+  {{ PropertyMapping | templateProperty = надразделение4-вид | ontologyProperty = regionType }}
+  {{ PropertyMapping | templateProperty = надразделение5-вид | ontologyProperty = regionType }}
+  {{ PropertyMapping | templateProperty = площ-за1 | ontologyProperty = areaLand | unit = squareKilometre }}
+  {{ PropertyMapping | templateProperty = площ-за2 | ontologyProperty = areaLand | unit = squareKilometre }}
+  {{ PropertyMapping | templateProperty = площ-за3 | ontologyProperty = areaLand | unit = squareKilometre }}
+  {{ PropertyMapping | templateProperty = площ-за4 | ontologyProperty = areaLand | unit = squareKilometre }}
+  {{ PropertyMapping | templateProperty = произношение-българско | ontologyProperty = }}
+  {{ PropertyMapping | templateProperty = произношение-местно    | ontologyProperty = }}
+друго-инфо
+друго-тип
+друго1-инфо
+друго1-тип
+карта-име
+карта1-име
+utc-отместване
+utc-отместване-лято
+--&gt;</text></revision></page><page><title>Mapping bg:Държава</title><ns>264</ns><id>5296</id><revision><id>18580</id><timestamp>2012-05-21T00:05:31Z</timestamp><text>{{ TemplateMapping | mapToClass = Country | mappings =
 
 	{{ PropertyMapping | templateProperty = кратко-име  | ontologyProperty = foaf:name }}
 	{{ PropertyMapping | templateProperty = пълно-име | ontologyProperty = longName }}
@@ -1103,45 +1112,7 @@
 		| latitudeDirection = Географска ширина 
 		| longitudeDirection = Географска дължина
 	}}
-}}</text></revision></page><page><title>Mapping bg:Инфокаре Селище в Украйна</title><ns>264</ns><id>5753</id><revision><id>18323</id><timestamp>2012-05-14T15:46:51Z</timestamp><text>{{ TemplateMapping | mapToClass = Settlement | mappings =
-
-	{{ PropertyMapping | templateProperty = дем | ontologyProperty = region }}
-	{{ PropertyMapping | templateProperty = област | ontologyProperty = region }}
-	{{ PropertyMapping | templateProperty = област-препратка | ontologyProperty = region }}
-
-	{{ PropertyMapping | templateProperty = район | ontologyProperty = region }}
-	{{ PropertyMapping | templateProperty = селище-вид | ontologyProperty = cityType }}
- 
-
-	{{ PropertyMapping | templateProperty = описание_изглед | ontologyProperty = pictureDescription }}
-	{{ PropertyMapping | templateProperty = изглед | ontologyProperty = picture }}
-
-	{{ PropertyMapping | templateProperty = име-гр | ontologyProperty = originalName }}
-
-	{{ PropertyMapping | templateProperty = население | ontologyProperty = populationTotal }}
-	{{ PropertyMapping | templateProperty = надморска-височина | ontologyProperty = elevation | unit = metre }}
-
-	{{ PropertyMapping | templateProperty = геообласт | ontologyProperty = region }}
-	{{ PropertyMapping | templateProperty = геообласт-препратка | ontologyProperty = region }}
-
-	{{ PropertyMapping | templateProperty = име | ontologyProperty = foaf:name }}
-
-	{{ PropertyMapping | templateProperty = община | ontologyProperty = municipality }}
- 	{{ PropertyMapping | templateProperty = община-препратка| ontologyProperty = municipality }}
-
-	{{ PropertyMapping | templateProperty = мпс-код | ontologyProperty = vehicleCode }}
-
-	{{ PropertyMapping | templateProperty = пощенски-код | ontologyProperty = postalCode }}
-	{{ PropertyMapping | templateProperty = телефонен-код | ontologyProperty = areaCode }}
-
-	{{ PropertyMapping | templateProperty = население-към | ontologyProperty = populationAsOf }}
-	{{ PropertyMapping | templateProperty = уебсайт | ontologyProperty = foaf:homepage }}
- 
-	{{ PropertyMapping | templateProperty = основано | ontologyProperty = foundingDate }}
-
-	{{ GeocoordinatesMapping | latitudeDegrees = ширина-градуси | latitudeMinutes = ширина-минути | latitudeSeconds = ширина-секунди | latitudeDirection = гш-посока | longitudeDegrees = дължина-градуси | longitudeMinutes = дължина-минути | longitudeSeconds = дължина-секунди | longitudeDirection = гд-посока }}
-
-}}</text></revision></page><page><title>Mapping bg:Инфокаре личност</title><ns>264</ns><id>5277</id><revision><id>17580</id><timestamp>2012-04-28T18:19:23Z</timestamp><text>{{ TemplateMapping | mapToClass = Person | mappings = 
+}}</text></revision></page><page><title>Mapping bg:Инфокаре Селище в Украйна</title><ns>264</ns><id>11240</id><revision><id>47854</id><timestamp>2015-05-07T14:07:59Z</timestamp><text>#REDIRECT [[Mapping bg:Селище в Украйна инфо]]</text></revision></page><page><title>Mapping bg:Инфокаре личност</title><ns>264</ns><id>5277</id><revision><id>17580</id><timestamp>2012-04-28T18:19:23Z</timestamp><text>{{ TemplateMapping | mapToClass = Person | mappings = 
 
 	{{ PropertyMapping | templateProperty = име | ontologyProperty = foaf:name }}
 	{{ PropertyMapping | templateProperty = име-оригинал | ontologyProperty = birthName }}
@@ -2196,7 +2167,7 @@
 	{{ PropertyMapping | templateProperty = адрес-община | ontologyProperty = address }}
 	{{ PropertyMapping | templateProperty = адрес-кметство | ontologyProperty = address }}
 
-}}</text></revision></page><page><title>Mapping bg:Селище в Италия инфо</title><ns>264</ns><id>10346</id><revision><id>39079</id><timestamp>2015-01-08T17:45:24Z</timestamp><text>{{TemplateMapping | mapToClass = Settlement
+}}</text></revision></page><page><title>Mapping bg:Селище в Италия инфо</title><ns>264</ns><id>10346</id><revision><id>47885</id><timestamp>2015-05-09T08:09:42Z</timestamp><text>{{TemplateMapping | mapToClass = Settlement
 | mappings = 
   {{ PropertyMapping | templateProperty = височина | ontologyProperty = elevation | unit = metre}}
   {{ PropertyMapping | templateProperty = герб | ontologyProperty = blazon}}
@@ -2210,7 +2181,7 @@
   {{ PropertyMapping | templateProperty = население | ontologyProperty = populationTotal }}
   {{ PropertyMapping | templateProperty = население-година | ontologyProperty = populationAsOf }}
   {{ PropertyMapping | templateProperty = община | ontologyProperty = municipality }}
-  {{ PropertyMapping | templateProperty = основаване | ontologyProperty = foundationDate }}
+  {{ PropertyMapping | templateProperty = основаване | ontologyProperty = foundingDate }}
   {{ PropertyMapping | templateProperty = площ | ontologyProperty = areaLand | unit = squareKilometre }}
   {{ PropertyMapping | templateProperty = пощенски-код | ontologyProperty = postalCode }}
   {{ PropertyMapping | templateProperty = провинция | ontologyProperty = region }}
@@ -2321,71 +2292,98 @@
 	{{ GeocoordinatesMapping | latitudeDirection = ширина | longitudeDirection = дължина }}
 
 
-}}</text></revision></page><page><title>Mapping bg:Селище инфо</title><ns>264</ns><id>5240</id><revision><id>47352</id><timestamp>2015-03-30T18:44:58Z</timestamp><text>{{ TemplateMapping | mapToClass = PopulatedPlace | mappings = 
+}}</text></revision></page><page><title>Mapping bg:Селище в Украйна инфо</title><ns>264</ns><id>5753</id><revision><id>47853</id><timestamp>2015-05-07T14:07:59Z</timestamp><text>{{ TemplateMapping | mapToClass = Settlement | mappings =
 
-	{{ PropertyMapping | templateProperty = българско название | ontologyProperty = foaf:name }}
-	{{ PropertyMapping | templateProperty = страна | ontologyProperty = locationCountry }}
-	{{ PropertyMapping | templateProperty = вид | ontologyProperty = cityType }}
-
-
-	{{ PropertyMapping | templateProperty = население | ontologyProperty = populationTotal }}
-	{{ PropertyMapping | templateProperty = година на преброяване | ontologyProperty = populationAsOf }}
-
-	{{ PropertyMapping | templateProperty = регион | ontologyProperty = region }}
-	{{ PropertyMapping | templateProperty = вид на региона | ontologyProperty = regionType }}
+	{{ PropertyMapping | templateProperty = дем | ontologyProperty = region }}
+	{{ PropertyMapping | templateProperty = област | ontologyProperty = region }}
+	{{ PropertyMapping | templateProperty = област-препратка | ontologyProperty = region }}
 
 	{{ PropertyMapping | templateProperty = район | ontologyProperty = region }}
-	{{ PropertyMapping | templateProperty = вид на района | ontologyProperty = regionType }}
-
-
-	{{ PropertyMapping | templateProperty = флаг | ontologyProperty = flag }}
-	{{ PropertyMapping | templateProperty = герб | ontologyProperty = blazon }}
-
+	{{ PropertyMapping | templateProperty = селище-вид | ontologyProperty = cityType }}
  
-	{{ PropertyMapping | templateProperty = климат | ontologyProperty = climate }}
 
-	{{ PropertyMapping | templateProperty = пощенски код | ontologyProperty = postalCode }}
-	{{ PropertyMapping | templateProperty = пощенски кодове | ontologyProperty = postalCode }}
-	{{ PropertyMapping | templateProperty = телефонен код | ontologyProperty = areaCode }}
+	{{ PropertyMapping | templateProperty = описание_изглед | ontologyProperty = pictureDescription }}
+	{{ PropertyMapping | templateProperty = изглед | ontologyProperty = picture }}
 
-	{{ PropertyMapping | templateProperty = площ | ontologyProperty = areaLand | unit = squareKilometre }}
-	{{ PropertyMapping | templateProperty = сайт | ontologyProperty = foaf:homepage }}
+	{{ PropertyMapping | templateProperty = име-гр | ontologyProperty = originalName }}
 
-	{{ PropertyMapping | templateProperty = часова зона | ontologyProperty = timeZone }}
-	{{ PropertyMapping | templateProperty = плътност | ontologyProperty = populationDensity }}
+	{{ PropertyMapping | templateProperty = население | ontologyProperty = populationTotal }}
+	{{ PropertyMapping | templateProperty = надморска-височина | ontologyProperty = elevation | unit = metre }}
 
-	{{ PropertyMapping | templateProperty = дата на основаване | ontologyProperty = foundingDate }}
+	{{ PropertyMapping | templateProperty = геообласт | ontologyProperty = region }}
+	{{ PropertyMapping | templateProperty = геообласт-препратка | ontologyProperty = region }}
 
-	{{ PropertyMapping | templateProperty = управител | ontologyProperty = governor }}
-	{{ PropertyMapping | templateProperty = вид управител | ontologyProperty = governmentType }}
-
-
-
-	{{ PropertyMapping | templateProperty = официален език | ontologyProperty = language }}
-
-	{{ PropertyMapping | templateProperty = език на сайта | ontologyProperty = language }}
-	{{ PropertyMapping | templateProperty = език на сайта 2  | ontologyProperty = language }}
-	{{ PropertyMapping | templateProperty = език на сайта 3 | ontologyProperty = language }}
-	{{ PropertyMapping | templateProperty = език на сайта 4 | ontologyProperty = language }}
-	{{ PropertyMapping | templateProperty = език на сайта 5 | ontologyProperty = language }}
-
-
-	{{ PropertyMapping | templateProperty = височина на центъра | ontologyProperty = elevation | unit = metre }}
+	{{ PropertyMapping | templateProperty = име | ontologyProperty = foaf:name }}
 
 	{{ PropertyMapping | templateProperty = община | ontologyProperty = municipality }}
-	{{ PropertyMapping | templateProperty = вид на общината | ontologyProperty = municipalityType }}
+ 	{{ PropertyMapping | templateProperty = община-препратка| ontologyProperty = municipality }}
+
+	{{ PropertyMapping | templateProperty = мпс-код | ontologyProperty = vehicleCode }}
+
+	{{ PropertyMapping | templateProperty = пощенски-код | ontologyProperty = postalCode }}
+	{{ PropertyMapping | templateProperty = телефонен-код | ontologyProperty = areaCode }}
+
+	{{ PropertyMapping | templateProperty = население-към | ontologyProperty = populationAsOf }}
+	{{ PropertyMapping | templateProperty = уебсайт | ontologyProperty = foaf:homepage }}
  
-	{{ PropertyMapping | templateProperty = DST | ontologyProperty = daylightSavingTimeZone }}
+	{{ PropertyMapping | templateProperty = основано | ontologyProperty = foundingDate }}
 
-	{{ PropertyMapping | templateProperty = автомобилен код | ontologyProperty = vehicleCode }}
+	{{ GeocoordinatesMapping | latitudeDegrees = ширина-градуси | latitudeMinutes = ширина-минути | latitudeSeconds = ширина-секунди | latitudeDirection = гш-посока | longitudeDegrees = дължина-градуси | longitudeMinutes = дължина-минути | longitudeSeconds = дължина-секунди | longitudeDirection = гд-посока }}
 
-	{{ PropertyMapping | templateProperty = статус | ontologyProperty = status }}
+}}</text></revision></page><page><title>Mapping bg:Селище инфо</title><ns>264</ns><id>5240</id><revision><id>47836</id><timestamp>2015-05-04T15:18:34Z</timestamp><text>{{ TemplateMapping | mapToClass = PopulatedPlace | mappings = 
+  {{ GeocoordinatesMapping | latitude = гео-ширина | longitude = гео-дължина }}
+  {{ PropertyMapping | templateProperty = вид | ontologyProperty = cityType }}
+  {{ PropertyMapping | templateProperty = височина | ontologyProperty = elevation | unit = metre }}
+  {{ PropertyMapping | templateProperty = герб | ontologyProperty = blazon }}
+  {{ PropertyMapping | templateProperty = знаме | ontologyProperty = flag }}
+  {{ PropertyMapping | templateProperty = изглед | ontologyProperty = picture }}
+  {{ PropertyMapping | templateProperty = изглед-описание | ontologyProperty = pictureDescription }}
+  {{ PropertyMapping | templateProperty = име | ontologyProperty = foaf:name }}
+  {{ PropertyMapping | templateProperty = име-местно | ontologyProperty = foaf:name }}
+  {{ PropertyMapping | templateProperty = кмет | ontologyProperty = mayor }}
+  {{ PropertyMapping | templateProperty = мпс-код | ontologyProperty = vehicleCode }}
+  {{ PropertyMapping | templateProperty = население | ontologyProperty = populationTotal }}
+  {{ PropertyMapping | templateProperty = население-година | ontologyProperty = populationAsOf }}
+  {{ PropertyMapping | templateProperty = област | ontologyProperty = region }}
+  {{ PropertyMapping | templateProperty = община | ontologyProperty = municipality }}
+  {{ PropertyMapping | templateProperty = окръг | ontologyProperty = region }}
+  {{ PropertyMapping | templateProperty = основаване | ontologyProperty = foundingDate }}
+  {{ PropertyMapping | templateProperty = площ | ontologyProperty = areaLand | unit = squareKilometre }}
+  {{ PropertyMapping | templateProperty = пощенски-код | ontologyProperty = postalCode }}
+  {{ PropertyMapping | templateProperty = провинция | ontologyProperty = province }}
+  {{ PropertyMapping | templateProperty = район | ontologyProperty = region }}
+  {{ PropertyMapping | templateProperty = регион | ontologyProperty = region }}
+  {{ PropertyMapping | templateProperty = сайт | ontologyProperty = foaf:homepage }}
+  {{ PropertyMapping | templateProperty = страна | ontologyProperty = country }}
+  {{ PropertyMapping | templateProperty = телефонен-код | ontologyProperty = areaCode }}
+  {{ PropertyMapping | templateProperty = управител-вид | ontologyProperty = governmentType }}
+  {{ PropertyMapping | templateProperty = управител-име | ontologyProperty = governor }}
+  {{ PropertyMapping | templateProperty = часова-зона | ontologyProperty = timeZone }}
+  {{ PropertyMapping | templateProperty = щат | ontologyProperty = state }}
+}}
 
- 
- 
-	{{ GeocoordinatesMapping | latitudeDegrees = lat_deg | latitudeMinutes = lat_min | latitudeSeconds = lat_sec | latitudeDirection = lat_dir | longitudeDegrees = lon_deg | longitudeMinutes = lon_min | longitudeSeconds = lon_sec | longitudeDirection = 	lon_dir }}
+&lt;!-- UNUSED properties
+  {{ PropertyMapping | templateProperty = DST | ontologyProperty = daylightSavingTimeZone }}
+  {{ PropertyMapping | templateProperty = българско название | ontologyProperty = foaf:name|language=bg }}
+  {{ PropertyMapping | templateProperty = вид на общината | ontologyProperty = municipalityType }}
+  {{ PropertyMapping | templateProperty = вид на района | ontologyProperty = regionType }}
+  {{ PropertyMapping | templateProperty = вид на региона | ontologyProperty = regionType }}
+  {{ PropertyMapping | templateProperty = година на преброяване | ontologyProperty = populationAsOf }}
+  {{ PropertyMapping | templateProperty = език на сайта 2  | ontologyProperty = language }}
+  {{ PropertyMapping | templateProperty = език на сайта 3 | ontologyProperty = language }}
+  {{ PropertyMapping | templateProperty = език на сайта 4 | ontologyProperty = language }}
+  {{ PropertyMapping | templateProperty = език на сайта 5 | ontologyProperty = language }}
+  {{ PropertyMapping | templateProperty = език на сайта | ontologyProperty = language }}
+  {{ PropertyMapping | templateProperty = климат | ontologyProperty = climate }}
+  {{ PropertyMapping | templateProperty = официален език | ontologyProperty = language }}
+  {{ PropertyMapping | templateProperty = плътност | ontologyProperty = populationDensity }}
+  {{ PropertyMapping | templateProperty = пощенски кодове | ontologyProperty = postalCode }}
+  {{ PropertyMapping | templateProperty = статус | ontologyProperty = status }}
 
-}}</text></revision></page><page><title>Mapping bg:Сингъл</title><ns>264</ns><id>5330</id><revision><id>17661</id><timestamp>2012-04-29T08:27:38Z</timestamp><text>{{TemplateMapping | mapToClass = Single | mappings =
+UNDOCUMENTED properties, hopefully not used in latest extract
+  дем
+  географска-област
+--&gt;</text></revision></page><page><title>Mapping bg:Сингъл</title><ns>264</ns><id>5330</id><revision><id>17661</id><timestamp>2012-04-29T08:27:38Z</timestamp><text>{{TemplateMapping | mapToClass = Single | mappings =
 
 	{{ PropertyMapping | templateProperty = Име | ontologyProperty = foaf:name }}
 	{{ PropertyMapping | templateProperty = Този сингъл | ontologyProperty = foaf:name }}
@@ -2874,6 +2872,27 @@
 
 	{{ PropertyMapping | templateProperty = прякор | ontologyProperty = commonName }}
 
+}}</text></revision></page><page><title>Mapping bg:Храм инфо</title><ns>264</ns><id>11239</id><revision><id>47849</id><timestamp>2015-05-04T16:50:35Z</timestamp><text>{{TemplateMapping | mapToClass = ReligiousBuilding
+| mappings = 
+  {{ PropertyMapping | templateProperty = архиерейско наместничество | ontologyProperty = bishopric }}
+  {{ PropertyMapping | templateProperty = архитектурен стил | ontologyProperty = architecturalStyle }}
+  {{ PropertyMapping | templateProperty = вероизповедание | ontologyProperty = religion }}
+  {{ PropertyMapping | templateProperty = вид на храма | ontologyProperty = type }}
+  {{ PropertyMapping | templateProperty = време на изграждане | ontologyProperty = buildingEndDate }}
+  {{ PropertyMapping | templateProperty = епархия | ontologyProperty = eparchy }}
+  {{ PropertyMapping | templateProperty = име| ontologyProperty = foaf:name }}
+  {{ PropertyMapping | templateProperty = име-оригинал | ontologyProperty = foaf:name }}
+  {{ PropertyMapping | templateProperty = карта | ontologyProperty = map }}
+  {{ PropertyMapping | templateProperty = картинка | ontologyProperty = picture }}
+  {{ PropertyMapping | templateProperty = картинка-описание | ontologyProperty = pictureDescription }}
+  {{ PropertyMapping | templateProperty = населено място | ontologyProperty = location }}
+  {{ PropertyMapping | templateProperty = общомедия | ontologyProperty = picturesCommonsCategory }}
+  {{ PropertyMapping | templateProperty = реликви | ontologyProperty = relics }}
+  {{ PropertyMapping | templateProperty = сайт | ontologyProperty = foaf:homepage }}
+  {{ PropertyMapping | templateProperty = страна | ontologyProperty = country }}
+  {{ PropertyMapping | templateProperty = съвременен статут | ontologyProperty = status }}
+  {{ PropertyMapping | templateProperty = съвременно състояние | ontologyProperty = status }}
+  {{ PropertyMapping | templateProperty = тип на сградата | ontologyProperty = type }}
 }}</text></revision></page><page><title>Mapping bg:Шахматист</title><ns>264</ns><id>5690</id><revision><id>38961</id><timestamp>2014-12-23T12:20:46Z</timestamp><text>{{ ConditionalMapping | cases =
 
   {{ Condition

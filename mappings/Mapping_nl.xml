@@ -1573,6 +1573,20 @@
 	{{ConstantMapping | ontologyProperty = language | value = Vietnamees }}
         {{PropertyMapping | templateProperty = afbeelding | ontologyProperty = picture }}
         {{PropertyMapping | templateProperty = onderschrift | ontologyProperty = pictureDescription }}
+}}</text></revision></page><page><title>Mapping nl:Infobox W3C-standaard</title><ns>216</ns><id>11245</id><revision><id>47922</id><timestamp>2015-05-24T18:39:32Z</timestamp><text>{{TemplateMapping
+| mapToClass = Standard
+| mappings =
+	{{PropertyMapping | templateProperty = auteurs | ontologyProperty = creator }}
+	{{PropertyMapping | templateProperty = naam | ontologyProperty = name }}
+        {{PropertyMapping | templateProperty = status | ontologyProperty = status }}
+        {{PropertyMapping | templateProperty = domein | ontologyProperty = category }}
+        {{PropertyMapping | templateProperty = website | ontologyProperty = foaf:homepage }}
+        {{PropertyMapping | templateProperty = startjaar | ontologyProperty = activeYearsStartYear }}
+        {{PropertyMapping | templateProperty = afkorting | ontologyProperty = abbreviation }}
+        {{PropertyMapping | templateProperty = logo | ontologyProperty = logo }}
+        {{PropertyMapping | templateProperty = afbeelding | ontologyProperty = picture }}
+        {{PropertyMapping | templateProperty = onderschrift | ontologyProperty = pictureDescription }}
+        {{PropertyMapping | templateProperty = gerelateerde_standaarden | ontologyProperty = related }}
 }}</text></revision></page><page><title>Mapping nl:Infobox Zuid-Afrika op Olympische Spelen</title><ns>216</ns><id>7518</id><revision><id>26709</id><timestamp>2013-06-30T10:04:59Z</timestamp><text>{{TemplateMapping
 | mapToClass = OlympicResult
 | mappings =
@@ -1759,7 +1773,7 @@ MeshName
 	&lt;!-- {{ PropertyMapping | templateProperty = min leeftijd | ontologyProperty = }} --&gt;
 	&lt;!-- {{ PropertyMapping | templateProperty = voorloper | ontologyProperty = }} --&gt;
 	&lt;!-- {{ PropertyMapping | templateProperty = wachtrijlengte | ontologyProperty | ontologyProperty = }} --&gt;
-}}</text></revision></page><page><title>Mapping nl:Infobox acteur</title><ns>216</ns><id>2915</id><revision><id>26293</id><timestamp>2013-06-19T14:13:21Z</timestamp><text>{{TemplateMapping
+}}</text></revision></page><page><title>Mapping nl:Infobox acteur</title><ns>216</ns><id>2915</id><revision><id>47911</id><timestamp>2015-05-20T20:26:40Z</timestamp><text>{{TemplateMapping
 | mapToClass = Actor
 | mappings =
         {{PropertyMapping | templateProperty = naam | ontologyProperty = foaf:name}}
@@ -1770,11 +1784,10 @@ MeshName
         {{PropertyMapping | templateProperty = onderschrift | ontologyProperty = subtitle }}
         {{PropertyMapping | templateProperty = geboren | ontologyProperty = birthDate }}
         {{PropertyMapping | templateProperty = geboren | ontologyProperty = birthYear }}
-{{PropertyMapping | templateProperty = geboorteplaats | ontologyProperty = birthPlace }}
+        {{PropertyMapping | templateProperty = geboorteplaats | ontologyProperty = birthPlace }}
         {{PropertyMapping | templateProperty = overleden | ontologyProperty = deathDate }}
         {{PropertyMapping | templateProperty = overleden | ontologyProperty = deathYear }}
-{{PropertyMapping | templateProperty = overlijdensplaats | ontologyProperty = deathPlace }}
-        {{PropertyMapping | templateProperty = geslacht | ontologyProperty = gender }}
+        {{PropertyMapping | templateProperty = overlijdensplaats | ontologyProperty = deathPlace }}
         {{PropertyMapping | templateProperty = land | ontologyProperty = country }}
         {{PropertyMapping | templateProperty = bijnaam | ontologyProperty = alias }}
         {{PropertyMapping | templateProperty = pseudoniem | ontologyProperty = pseudonym }}
@@ -2815,6 +2828,23 @@ bronmodel
 
 	{{PropertyMapping | templateProperty = SMILES | ontologyProperty = smiles }}
 	{{PropertyMapping | templateProperty = Opslag | ontologyProperty = typeOfStorage}}
+}}</text></revision></page><page><title>Mapping nl:Infobox circuit</title><ns>216</ns><id>11232</id><revision><id>47801</id><timestamp>2015-04-28T11:26:17Z</timestamp><text>{{TemplateMapping
+| mapToClass = RaceTrack
+| mappings =
+
+	{{ PropertyMapping | templateProperty = tijdzone | ontologyProperty = timeZone }}
+	{{ PropertyMapping | templateProperty = architect | ontologyProperty = architect }}
+	{{ PropertyMapping | templateProperty = geopend | ontologyProperty = openingYear }}
+	{{ PropertyMapping | templateProperty = gesloten | ontologyProperty = closingYear }}
+	{{ PropertyMapping | templateProperty = eigenaar | ontologyProperty = owner }}
+	{{ PropertyMapping | templateProperty = operator | ontologyProperty = operator }}
+        {{ PropertyMapping | templateProperty = naam | ontologyProperty = name }}
+	{{ PropertyMapping | templateProperty = locatie | ontologyProperty = location }}
+        {{ PropertyMapping | templateProperty = naam | ontologyProperty = name }}
+	{{ PropertyMapping | templateProperty = lengte | ontologyProperty = length }}
+	{{ PropertyMapping | templateProperty = afbeelding | ontologyProperty = picture }}
+        {{ PropertyMapping | templateProperty = onderschrift | ontologyProperty = pictureDescription }}
+
 }}</text></revision></page><page><title>Mapping nl:Infobox collectie</title><ns>216</ns><id>6580</id><revision><id>28937</id><timestamp>2013-12-12T14:06:46Z</timestamp><text>{{TemplateMapping
 | mapToClass = CollectionOfValuables
 | mappings =
@@ -3510,6 +3540,23 @@ bronmodel
 	 {{PropertyMapping | templateProperty = Kookpunt | ontologyProperty = boilingPoint | unit = kelvin}}
 	 {{PropertyMapping | templateProperty = Sublimatiepunt | ontologyProperty = sublimationPoint | unit = kelvin}}
 	 {{PropertyMapping | templateProperty = Kleur | ontologyProperty = colour}}
+}}</text></revision></page><page><title>Mapping nl:Infobox etappe Ronde van Frankrijk</title><ns>216</ns><id>11231</id><revision><id>47798</id><timestamp>2015-04-28T11:16:31Z</timestamp><text>{{TemplateMapping
+| mapToClass = CyclingRace 
+| mappings =
+
+	{{ConstantMapping | ontologyProperty = organisation | value = Ronde van Frankrijk }}
+        {{ PropertyMapping | templateProperty = datum | ontologyProperty = date }}
+	{{ PropertyMapping | templateProperty = naam | ontologyProperty = name }}
+	{{ PropertyMapping | templateProperty = van | ontologyProperty = location }}
+        {{ PropertyMapping | templateProperty = naar | ontologyProperty = location }}
+        {{ PropertyMapping | templateProperty = naam | ontologyProperty = name }}
+	{{ PropertyMapping | templateProperty = lengte | ontologyProperty = length }}
+	{{ PropertyMapping | templateProperty = laatste | ontologyProperty = previousEvent }}
+        {{ PropertyMapping | templateProperty = vorige | ontologyProperty = previousEvent }}
+        {{ PropertyMapping | templateProperty = volgende | ontologyProperty = nextEvent }}
+        {{ PropertyMapping | templateProperty = afbeelding | ontologyProperty = picture }}
+        {{ PropertyMapping | templateProperty = onderschrift | ontologyProperty = pictureDescription }}
+
 }}</text></revision></page><page><title>Mapping nl:Infobox evenement</title><ns>216</ns><id>9471</id><revision><id>35210</id><timestamp>2014-06-10T18:56:09Z</timestamp><text>{{TemplateMapping
 | mapToClass = SocietalEvent
 | mappings =
@@ -5603,7 +5650,7 @@ bronmodel
          {{PropertyMapping | templateProperty = type | ontologyProperty = type }}
          {{PropertyMapping | templateProperty = machinevermogen | ontologyProperty = powerOutput }}
 
-}}</text></revision></page><page><title>Mapping nl:Infobox medicus</title><ns>216</ns><id>8125</id><revision><id>28379</id><timestamp>2013-09-16T13:54:43Z</timestamp><text>{{TemplateMapping 
+}}</text></revision></page><page><title>Mapping nl:Infobox medicus</title><ns>216</ns><id>8125</id><revision><id>47792</id><timestamp>2015-04-23T07:49:13Z</timestamp><text>{{TemplateMapping 
 | mapToClass = Medician 
 | mappings =
 
@@ -5628,7 +5675,7 @@ bronmodel
 	{{ PropertyMapping | templateProperty = sterfplaats | ontologyProperty = deathPlace }}
 	{{ PropertyMapping | templateProperty = volledigenaam | ontologyProperty = longName }}
 	{{ PropertyMapping | templateProperty = website | ontologyProperty = foaf:homepage }}
-	{{ PropertyMapping | templateProperty = zieook | ontologyProperty = skos:related }}
+	{{ PropertyMapping | templateProperty = zieook | ontologyProperty = related }}
 	{{ PropertyMapping | templateProperty = extra portaal | ontologyProperty = webcast }}
 	{{ PropertyMapping | templateProperty = functie1 | ontologyProperty = personFunction }}
 	{{ DateIntervalMapping | templateProperty = tijdvak1 | startDateOntologyProperty = activeYearsStartYear | endDateOntologyProperty = activeYearsEndYear }}
@@ -6275,7 +6322,7 @@ bronmodel
         {{PropertyMapping | templateProperty = ontwerper | ontologyProperty = architect }}
         {{PropertyMapping | templateProperty = inscriptie | ontologyProperty = motto }}
         {{PropertyMapping | templateProperty = coördinaten | ontologyProperty = gridReference }}
-}}</text></revision></page><page><title>Mapping nl:Infobox militair persoon</title><ns>216</ns><id>6435</id><revision><id>40789</id><timestamp>2015-02-06T09:04:21Z</timestamp><text>{{TemplateMapping
+}}</text></revision></page><page><title>Mapping nl:Infobox militair persoon</title><ns>216</ns><id>6435</id><revision><id>47834</id><timestamp>2015-05-02T10:49:40Z</timestamp><text>{{TemplateMapping
 | mapToClass = MilitaryPerson
 | mappings =
   {{ PropertyMapping | templateProperty = naam | ontologyProperty = foaf:name }}
@@ -6295,15 +6342,15 @@ bronmodel
   {{ PropertyMapping | templateProperty = bijnaam | ontologyProperty = foaf:nick }}
   {{ PropertyMapping | templateProperty = eenheid | ontologyProperty = militaryUnit }}
   {{ PropertyMapping | templateProperty = onderdeel | ontologyProperty = militaryBranch }}
-  {{ PropertyMapping | templateProperty = onderscheidingen | ontologyProperty = award }}
+  {{ PropertyMapping | templateProperty = onderscheidingen | ontologyProperty = decoration }}
   {{ DateIntervalMapping | templateProperty = dienstjaren | startDateOntologyProperty = serviceStartYear | endDateOntologyProperty = serviceEndYear }}
   {{ DateIntervalMapping | templateProperty = periode | startDateOntologyProperty = birthDate | endDateOntologyProperty = deathDate }}
   {{ PropertyMapping | templateProperty = veldslagen | ontologyProperty = battle }}
   {{ PropertyMapping | templateProperty = veldslagen-naam | ontologyProperty = battle }}
-  {{ PropertyMapping | templateProperty = anderwerk | ontologyProperty = occupation }}
+  {{ PropertyMapping | templateProperty = anderwerk | ontologyProperty = knownFor }}
   {{ PropertyMapping | templateProperty = leiding | ontologyProperty = militaryCommand }}
   {{ PropertyMapping | templateProperty = portaal | ontologyProperty = webcast }}
-  {{ PropertyMapping | templateProperty = partij | ontologyProperty = country }}
+  {{ PropertyMapping | templateProperty = partij | ontologyProperty = allegiance }}
   {{ PropertyMapping | templateProperty = religie | ontologyProperty = religion }}
 }}</text></revision></page><page><title>Mapping nl:Infobox militaire eenheid</title><ns>216</ns><id>11160</id><revision><id>46631</id><timestamp>2015-03-20T08:38:45Z</timestamp><text>{{TemplateMapping 
 | mapToClass = MilitaryUnit
@@ -7137,7 +7184,7 @@ bronmodel
 | mappings =
 	{{PropertyMapping | templateProperty = naam | ontologyProperty = name }}
 	{{PropertyMapping | templateProperty = acteur | ontologyProperty = performer }}
-}}</text></revision></page><page><title>Mapping nl:Infobox persoon</title><ns>216</ns><id>5940</id><revision><id>45893</id><timestamp>2015-03-15T12:33:16Z</timestamp><text>{{TemplateMapping 
+}}</text></revision></page><page><title>Mapping nl:Infobox persoon</title><ns>216</ns><id>5940</id><revision><id>47791</id><timestamp>2015-04-23T07:48:36Z</timestamp><text>{{TemplateMapping 
 | mapToClass = Person 
 | mappings =
    {{ PropertyMapping | templateProperty = naam | ontologyProperty = foaf:name }}
@@ -7158,7 +7205,7 @@ bronmodel
    {{ PropertyMapping | templateProperty = politiek | ontologyProperty = party }}
    {{ PropertyMapping | templateProperty = partners | ontologyProperty = spouse }}
    {{ PropertyMapping  | templateProperty = kinderen | ontologyProperty = child }}
-   {{ PropertyMapping | templateProperty = zieook | ontologyProperty = skos:related }}
+   {{ PropertyMapping | templateProperty = zieook | ontologyProperty = related }}
    {{ PropertyMapping | templateProperty = altnaam | ontologyProperty = foaf:nick }}
    {{ PropertyMapping | templateProperty = functie1 | ontologyProperty = personFunction }}
    {{ PropertyMapping | templateProperty = algemeen1 | ontologyProperty = notes }}
@@ -7311,7 +7358,7 @@ bronmodel
                   		| longitudeMinutes = lon_min | longitudeSeconds = lon_sec   
                         	| latitudeMinutes = lat_min | latitudeSeconds = lat_sec  }}  
 
-}}</text></revision></page><page><title>Mapping nl:Infobox plaats Verenigde Staten</title><ns>216</ns><id>5972</id><revision><id>32815</id><timestamp>2014-03-18T20:16:49Z</timestamp><text>{{TemplateMapping
+}}</text></revision></page><page><title>Mapping nl:Infobox plaats Verenigde Staten</title><ns>216</ns><id>5972</id><revision><id>47785</id><timestamp>2015-04-13T10:00:53Z</timestamp><text>{{TemplateMapping
 | mapToClass = Settlement
 | mappings = 
 
@@ -7341,7 +7388,6 @@ bronmodel
 	{{PropertyMapping | templateProperty = zip | ontologyProperty = postalCode }}
 	{{PropertyMapping | templateProperty = vlag | ontologyProperty = flag }}
 	{{PropertyMapping | templateProperty = flag | ontologyProperty = flag }}
-	{{PropertyMapping | templateProperty = coords | ontologyProperty = gridReference }}
 
 	{{PropertyMapping | templateProperty = image1 | ontologyProperty = picture }}
 	{{PropertyMapping | templateProperty = foto1 | ontologyProperty = picture }}
@@ -8098,7 +8144,7 @@ bronmodel
                         	| latitudeMinutes = lat_min | latitudeSeconds = lat_sec  }}  
 
 
-}}</text></revision></page><page><title>Mapping nl:Infobox plaats in Nederland</title><ns>216</ns><id>5965</id><revision><id>33221</id><timestamp>2014-03-29T10:03:54Z</timestamp><text>{{TemplateMapping
+}}</text></revision></page><page><title>Mapping nl:Infobox plaats in Nederland</title><ns>216</ns><id>5965</id><revision><id>47903</id><timestamp>2015-05-13T11:13:16Z</timestamp><text>{{TemplateMapping
 | mapToClass = Settlement
 | mappings = 
 
@@ -8109,6 +8155,8 @@ bronmodel
 	{{PropertyMapping | templateProperty = altnaam | ontologyProperty = alternativeName }}
 	{{PropertyMapping | templateProperty = opvolgers | ontologyProperty = successor }}
 	{{PropertyMapping | templateProperty = voorgangers | ontologyProperty = predecessor }}
+	{{PropertyMapping | templateProperty = jaarvan | ontologyProperty = startYear }}
+	{{PropertyMapping | templateProperty = jaartot | ontologyProperty = endYear }}
 
 	{{PropertyMapping | templateProperty = inwoners | ontologyProperty = populationTotal }}
 	{{PropertyMapping | templateProperty = dichtheid | ontologyProperty = populationDensity }}
@@ -8120,6 +8168,7 @@ bronmodel
 	{{PropertyMapping | templateProperty = datum inwoners | ontologyProperty = populationAsOf }}
 	{{PropertyMapping | templateProperty = naam inwoner | ontologyProperty = peopleName }}
         {{PropertyMapping | templateProperty = COROP | ontologyProperty = dutchCOROPCode }}
+        {{PropertyMapping | templateProperty = Amsterdamse code | ontologyProperty = amsterdamCode }}
 	{{PropertyMapping | templateProperty = gemeente | ontologyProperty = municipality }}
 	{{PropertyMapping | templateProperty = provincie | ontologyProperty = province }}
 	{{PropertyMapping | templateProperty = position | ontologyProperty = position }}
@@ -8161,8 +8210,7 @@ bronmodel
 	{{PropertyMapping | templateProperty = oppervlakte water | ontologyProperty = areaWater }}
 	{{PropertyMapping | templateProperty = hoogteligging | ontologyProperty = elevation }}
 
-	{{GeocoordinatesMapping | latitudeDegrees = lat_deg | longitudeDegrees = lon_deg   }}  
-	{{GeocoordinatesMapping | latitudeDegrees = breedtegraad | longitudeDegrees = lengtegraad  }}  
+	{{GeocoordinatesMapping | latitudeDegrees = lat_deg | longitudeDegrees = lon_deg   }}   
 	{{GeocoordinatesMapping | longitudeMinutes = lon_min | longitudeSeconds = lon_sec   }}  
 	{{GeocoordinatesMapping | latitudeMinutes = lat_min | latitudeSeconds = lat_sec   }}  
 
@@ -10737,7 +10785,7 @@ bronmodel
         {{ PropertyMapping | templateProperty = afbeelding | ontologyProperty = picture }}
         {{ PropertyMapping | templateProperty = onderschrift | ontologyProperty = pictureDescription }}
         {{ PropertyMapping | templateProperty = extra portaal | ontologyProperty = webcast }}
-}}</text></revision></page><page><title>Mapping nl:Infobox stad Verenigde Staten</title><ns>216</ns><id>10276</id><revision><id>47152</id><timestamp>2015-03-24T18:41:27Z</timestamp><text>{{TemplateMapping
+}}</text></revision></page><page><title>Mapping nl:Infobox stad Verenigde Staten</title><ns>216</ns><id>10276</id><revision><id>47861</id><timestamp>2015-05-09T08:00:15Z</timestamp><text>{{TemplateMapping
 | mapToClass = City
 | mappings = 
 
@@ -10765,7 +10813,7 @@ bronmodel
 	{{PropertyMapping | templateProperty = wapenartikel | ontologyProperty = blazonLink }}
 	{{PropertyMapping | templateProperty = image_skyline | ontologyProperty = picture }}
 	{{PropertyMapping | templateProperty = caption_skyline | ontologyProperty = pictureDescription }}
-	{{PropertyMapping | templateProperty = datum | ontologyProperty = foundationDate }}
+	{{PropertyMapping | templateProperty = datum | ontologyProperty = foundingDate }}
 	{{PropertyMapping | templateProperty = jaar | ontologyProperty = foundation }}
 	{{PropertyMapping | templateProperty = tijdzone | ontologyProperty = timeZone }}
 	{{PropertyMapping | templateProperty = altitude | ontologyProperty = elevation }}
@@ -13780,7 +13828,7 @@ pt  UCI ProTour
 	{{PropertyMapping | templateProperty = commons | ontologyProperty = picturesCommonsCategory }}
 	{{PropertyMapping | templateProperty = afbeelding2 | ontologyProperty = picture }}
 	{{PropertyMapping | templateProperty = afbeelding2tekst | ontologyProperty = pictureDescription }} 
-}}</text></revision></page><page><title>Mapping nl:Taxobox insect</title><ns>216</ns><id>6256</id><revision><id>39212</id><timestamp>2015-01-12T21:20:23Z</timestamp><text>{{TemplateMapping
+}}</text></revision></page><page><title>Mapping nl:Taxobox insect</title><ns>216</ns><id>6256</id><revision><id>47784</id><timestamp>2015-04-13T09:59:05Z</timestamp><text>{{TemplateMapping
 | mapToClass = Insect
 | mappings =
 
@@ -13801,7 +13849,6 @@ pt  UCI ProTour
 	{{PropertyMapping | templateProperty = soort | ontologyProperty = species }}
 	{{PropertyMapping | templateProperty = species | ontologyProperty = species }}
 	{{PropertyMapping | templateProperty = geslacht | ontologyProperty = genus }}
-	{{PropertyMapping | templateProperty = stam | ontologyProperty = tribus }}
 	{{PropertyMapping | templateProperty = taxon | ontologyProperty = taxon }}
 	{{PropertyMapping | templateProperty = tribus | ontologyProperty = tribus }}
 	{{PropertyMapping | templateProperty = klasse | ontologyProperty = classis }}
@@ -13818,7 +13865,7 @@ pt  UCI ProTour
 	{{PropertyMapping | templateProperty = afbeelding2tekst | ontologyProperty = pictureDescription }} 
 	{{PropertyMapping | templateProperty = ondergeslacht | ontologyProperty = subGenus }}
 	{{PropertyMapping | templateProperty = fossiel | ontologyProperty = fossil }}
-	{{PropertyMapping | templateProperty = type | ontologyProperty = type }}
+	{{PropertyMapping | templateProperty = typesoort | ontologyProperty = type }}
 	{{PropertyMapping | templateProperty = onderorde | ontologyProperty = subOrder }}
 	{{PropertyMapping | templateProperty = superorde | ontologyProperty = superOrder }}
 }}</text></revision></page><page><title>Mapping nl:Taxobox reptiel</title><ns>216</ns><id>6713</id><revision><id>39215</id><timestamp>2015-01-12T21:26:49Z</timestamp><text>{{TemplateMapping

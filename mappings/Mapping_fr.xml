@@ -1265,7 +1265,7 @@
         {{PropertyMapping | templateProperty = débuts | ontologyProperty = activeYearsStartYear }}
         {{PropertyMapping | templateProperty = fin | ontologyProperty = activeYearsEndYear }}
         {{PropertyMapping | templateProperty = fédérations | ontologyProperty = federation }}
-}}</text></revision></page><page><title>Mapping fr:Infobox Cavalier</title><ns>210</ns><id>7600</id><revision><id>27263</id><timestamp>2013-07-09T14:44:50Z</timestamp><text>{{TemplateMapping
+}}</text></revision></page><page><title>Mapping fr:Infobox Cavalier</title><ns>210</ns><id>7600</id><revision><id>48303</id><timestamp>2015-05-25T15:31:08Z</timestamp><text>{{TemplateMapping
 | mapToClass = HorseRider
 | mappings =
 	{{PropertyMapping | templateProperty = nom | ontologyProperty = foaf:name }}
@@ -1742,7 +1742,7 @@
            {{PropertyMapping | templateProperty = maire  | ontologyProperty = mayor }}
            {{PropertyMapping | templateProperty = Conseillers | ontologyProperty = mayorCouncillor }}
         }}
-}}</text></revision></page><page><title>Mapping fr:Infobox Commune d'Espagne</title><ns>210</ns><id>4461</id><revision><id>27806</id><timestamp>2013-07-16T14:23:33Z</timestamp><text>{{TemplateMapping
+}}</text></revision></page><page><title>Mapping fr:Infobox Commune d'Espagne</title><ns>210</ns><id>4461</id><revision><id>47860</id><timestamp>2015-05-09T07:59:50Z</timestamp><text>{{TemplateMapping
 | mapToClass = Settlement
 | mappings =
 	{{ConstantMapping | ontologyProperty = country | value = Espagne}}
@@ -1754,7 +1754,7 @@
         {{GeocoordinatesMapping | latitude = latitude  | longitude = longitude }}
         {{PropertyMapping | templateProperty = statut | ontologyProperty = status }}
         {{PropertyMapping | templateProperty = gentilé | ontologyProperty = peopleName }}
-        {{PropertyMapping | templateProperty = fondation | ontologyProperty = foundationDate }}
+        {{PropertyMapping | templateProperty = fondation | ontologyProperty = foundingDate }}
         {{PropertyMapping | templateProperty = commauto | ontologyProperty = region }}
         {{PropertyMapping | templateProperty = province | ontologyProperty = province }}
         {{PropertyMapping | templateProperty = Comarque | ontologyProperty = locatedInArea }}
@@ -3078,7 +3078,7 @@
         | mappings =
            {{PropertyMapping | templateProperty = superficie | ontologyProperty = value }} 
         }} 
-}}</text></revision></page><page><title>Mapping fr:Infobox Commune du Mexique</title><ns>210</ns><id>6973</id><revision><id>45234</id><timestamp>2015-02-12T20:05:11Z</timestamp><text>{{TemplateMapping 
+}}</text></revision></page><page><title>Mapping fr:Infobox Commune du Mexique</title><ns>210</ns><id>6973</id><revision><id>47862</id><timestamp>2015-05-09T08:00:42Z</timestamp><text>{{TemplateMapping 
 | mapToClass = Settlement 
 | mappings = 
         {{ConstantMapping | ontologyProperty = country | value = Mexique }} 
@@ -3120,7 +3120,7 @@
            {{PropertyMapping | templateProperty = superficie | ontologyProperty = value }} 
         }}
         {{GeocoordinatesMapping | latitude = latitude  | longitude = longitude }}
-        {{PropertyMapping | templateProperty = date de fondation | ontologyProperty = foundationDate }}
+        {{PropertyMapping | templateProperty = date de fondation | ontologyProperty = foundingDate }}
         {{PropertyMapping | templateProperty = fondateur | ontologyProperty = founder }}
         {{IntermediateNodeMapping
         | nodeClass = Politician
@@ -3605,7 +3605,7 @@
         {{PropertyMapping | templateProperty = gentilé | ontologyProperty = peopleName }} 
         {{GeocoordinatesMapping | latitude = latitude  | longitude = longitude }}
         {{PropertyMapping | templateProperty = site web | ontologyProperty = foaf:homepage }}
-}}</text></revision></page><page><title>Mapping fr:Infobox Département de France</title><ns>210</ns><id>7013</id><revision><id>28078</id><timestamp>2013-08-27T09:10:43Z</timestamp><text>{{TemplateMapping 
+}}</text></revision></page><page><title>Mapping fr:Infobox Département de France</title><ns>210</ns><id>7013</id><revision><id>47863</id><timestamp>2015-05-09T08:01:04Z</timestamp><text>{{TemplateMapping 
 | mapToClass = Department 
 | mappings = 
         {{ConstantMapping | ontologyProperty = country | value = France }} 
@@ -3615,7 +3615,7 @@
         {{PropertyMapping | templateProperty = imageloc | ontologyProperty = localizationThumbnail }}
         {{PropertyMapping | templateProperty = région | ontologyProperty = region }}
         {{PropertyMapping | templateProperty = insee | ontologyProperty = inseeCode }} 
-        {{PropertyMapping | templateProperty = Date de création | ontologyProperty = foundationDate }} 
+        {{PropertyMapping | templateProperty = Date de création | ontologyProperty = foundingDate }} 
         {{PropertyMapping | templateProperty = Préfecture | ontologyProperty = prefecture }} 
         {{PropertyMapping | templateProperty = Sous-préfectures | ontologyProperty = subprefecture }} 
         {{IntermediateNodeMapping
@@ -4055,7 +4055,7 @@
         {{PropertyMapping | templateProperty = enfants | ontologyProperty = child}}
         {{PropertyMapping | templateProperty = ornements extérieurs | ontologyProperty = externalOrnament}}
         {{PropertyMapping | templateProperty = blason | ontologyProperty = blazon}}
-}}</text></revision></page><page><title>Mapping fr:Infobox Intercommunalité de France</title><ns>210</ns><id>7067</id><revision><id>28081</id><timestamp>2013-08-27T09:20:38Z</timestamp><text>{{TemplateMapping 
+}}</text></revision></page><page><title>Mapping fr:Infobox Intercommunalité de France</title><ns>210</ns><id>7067</id><revision><id>47864</id><timestamp>2015-05-09T08:01:27Z</timestamp><text>{{TemplateMapping 
 | mapToClass = Intercommunality 
 | mappings = 
         {{ConstantMapping | ontologyProperty = country | value = France }} 
@@ -4067,7 +4067,7 @@
         {{PropertyMapping | templateProperty = forme | ontologyProperty = shape }}
         {{PropertyMapping | templateProperty = siège | ontologyProperty = headquarter }}
         {{PropertyMapping | templateProperty = nbre communes | ontologyProperty = numberOfSettlement }}
-        {{PropertyMapping | templateProperty = date-création | ontologyProperty = foundationDate }}
+        {{PropertyMapping | templateProperty = date-création | ontologyProperty = foundingDate }}
         {{PropertyMapping | templateProperty = date-disparition | ontologyProperty = disappearanceDate }}
         {{PropertyMapping | templateProperty = SIREN | ontologyProperty = siren }}
         {{IntermediateNodeMapping
@@ -7499,8 +7499,8 @@
         {{PropertyMapping | templateProperty = indicatif_téléphonique | ontologyProperty = phonePrefix }}
         {{PropertyMapping | templateProperty = hymne | ontologyProperty = anthem }}
         {{PropertyMapping | templateProperty = devises | ontologyProperty = motto }} 
-}}</text></revision></page><page><title>Mapping fr:Infobox Torero</title><ns>210</ns><id>7836</id><revision><id>27413</id><timestamp>2013-07-10T16:04:58Z</timestamp><text>{{TemplateMapping
-| mapToClass = Bullfighter
+}}</text></revision></page><page><title>Mapping fr:Infobox Torero</title><ns>210</ns><id>7836</id><revision><id>48347</id><timestamp>2015-05-25T16:30:44Z</timestamp><text>{{TemplateMapping
+| mapToClass = BullFighter
 | mappings =
 	{{PropertyMapping | templateProperty = nom | ontologyProperty = foaf:name }}
 	{{PropertyMapping | templateProperty = légende | ontologyProperty = thumbnailCaption }}

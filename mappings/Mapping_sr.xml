@@ -4747,12 +4747,12 @@
 	{{PropertyMapping | templateProperty = гшир      | ontologyProperty = geo:lat }}
 	{{PropertyMapping | templateProperty = гдуж    | ontologyProperty = geo:long }}
 
-}}</text></revision></page><page><title>Mapping sr:Град у Украјини</title><ns>256</ns><id>8865</id><revision><id>30287</id><timestamp>2014-01-21T08:29:04Z</timestamp><text>{{TemplateMapping
+}}</text></revision></page><page><title>Mapping sr:Град у Украјини</title><ns>256</ns><id>8865</id><revision><id>47867</id><timestamp>2015-05-09T08:02:35Z</timestamp><text>{{TemplateMapping
 | mapToClass = City
 | mappings =
 	{{PropertyMapping | templateProperty = назив  | ontologyProperty = foaf:name }}
 	{{PropertyMapping | templateProperty = изворни_назив | ontologyProperty = originalName }}
-	{{PropertyMapping | templateProperty = оснивање   | ontologyProperty = foundationDate }}
+	{{PropertyMapping | templateProperty = оснивање   | ontologyProperty = foundingDate }}
         {{PropertyMapping | templateProperty = област| ontologyProperty = region}}
 	{{PropertyMapping | templateProperty = надморска_висина    | ontologyProperty = elevation | unit = metre  }}
 	{{PropertyMapping | templateProperty = становништво  | ontologyProperty = populationTotal }}
@@ -6606,7 +6606,7 @@
 	 {{ PropertyMapping | templateProperty = шампиони | ontologyProperty = champion  }} 
 	&lt;!-- {{ PropertyMapping | templateProperty = домаћин | ontologyProperty = }} --&gt;
 	&lt;!-- {{ PropertyMapping | templateProperty = други | ontologyProperty = }} --&gt;
-}}</text></revision></page><page><title>Mapping sr:Кутијица за НБА</title><ns>256</ns><id>8989</id><revision><id>30985</id><timestamp>2014-01-27T07:27:47Z</timestamp><text>{{TemplateMapping | mapToClass = BasketballTeam
+}}</text></revision></page><page><title>Mapping sr:Кутијица за НБА</title><ns>256</ns><id>8989</id><revision><id>47866</id><timestamp>2015-05-09T08:02:10Z</timestamp><text>{{TemplateMapping | mapToClass = BasketballTeam
 | mappings = 
 	{{ PropertyMapping | templateProperty = величина | ontologyProperty = teamSize }}
 	{{ PropertyMapping | templateProperty = власник | ontologyProperty = owner }}
@@ -6615,7 +6615,7 @@
 	{{ PropertyMapping | templateProperty = име | ontologyProperty = foaf:name}}
 	&lt;!-- {{ PropertyMapping | templateProperty = конф_шамп | ontologyProperty = }} --&gt;
 	&lt;!--{{ PropertyMapping | templateProperty = конференција | ontologyProperty =  }}--&gt;
-	{{ PropertyMapping | templateProperty = основан | ontologyProperty = foundationDate}}
+	{{ PropertyMapping | templateProperty = основан | ontologyProperty = foundingDate}}
 	{{ PropertyMapping | templateProperty = тренер | ontologyProperty = coach }}
 	{{ PropertyMapping | templateProperty = дворана | ontologyProperty = homeArena}}
 	{{ PropertyMapping | templateProperty = изворно име | ontologyProperty = originalName}}

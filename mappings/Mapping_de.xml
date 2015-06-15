@@ -834,7 +834,7 @@
 
       Maybe useful properties but without a counterpart so far:
 
---&gt;</text></revision></page><page><title>Mapping de:Infobox Biathlet</title><ns>208</ns><id>4005</id><revision><id>46597</id><timestamp>2015-03-19T16:09:32Z</timestamp><text>{{ TemplateMapping
+--&gt;</text></revision></page><page><title>Mapping de:Infobox Biathlet</title><ns>208</ns><id>4005</id><revision><id>47893</id><timestamp>2015-05-12T11:32:35Z</timestamp><text>{{ TemplateMapping
    | mapToClass = Biathlete
    | mappings =
        {{ PropertyMapping | templateProperty = kurzname | ontologyProperty = foaf:name }}
@@ -848,7 +848,8 @@
        {{ PropertyMapping | templateProperty = sterbeort| ontologyProperty = deathPlace }}
        {{ PropertyMapping | templateProperty = sterbeland| ontologyProperty = deathPlace }}
        {{ PropertyMapping | templateProperty = beruf | ontologyProperty = profession }}
-       {{ PropertyMapping | templateProperty = verein | ontologyProperty = club }}
+       {{ PropertyMapping | templateProperty = verein | ontologyProperty = team }}
+       {{ PropertyMapping | templateProperty = team | ontologyProperty = team }}
        {{ PropertyMapping | templateProperty = trainer | ontologyProperty = coach }}
        {{ PropertyMapping | templateProperty = nationalkader | ontologyProperty = nationalTeam }}
        {{ PropertyMapping | templateProperty = karriereende | ontologyProperty = activeYearsEndDate }}
@@ -879,7 +880,6 @@
        {{ PropertyMapping | templateProperty = verfolgung | ontologyProperty = }}
        {{ PropertyMapping | templateProperty = massenstart | ontologyProperty = }}
        {{ PropertyMapping | templateProperty = staffel | ontologyProperty = }}
-       {{ PropertyMapping | templateProperty = team | ontologyProperty = }}
 --&gt;</text></revision></page><page><title>Mapping de:Infobox Bibliothek</title><ns>208</ns><id>2936</id><revision><id>47030</id><timestamp>2015-03-23T08:18:42Z</timestamp><text>{{TemplateMapping
 | mapToClass = Library
 | mappings =
@@ -9003,14 +9003,14 @@ Im Englischen nicht bekannt/verwendet:
        {{ PropertyMapping | templateProperty = national | ontologyProperty = }}
        {{ PropertyMapping | templateProperty = welt | ontologyProperty = }}
        {{ PropertyMapping | templateProperty = erfolgebeach | ontologyProperty = }}
---&gt;</text></revision></page><page><title>Mapping de:Infobox WRC-Fahrer</title><ns>208</ns><id>4010</id><revision><id>13801</id><timestamp>2011-06-20T15:08:40Z</timestamp><text>{{ TemplateMapping
+--&gt;</text></revision></page><page><title>Mapping de:Infobox WRC-Fahrer</title><ns>208</ns><id>4010</id><revision><id>47894</id><timestamp>2015-05-12T11:33:28Z</timestamp><text>{{ TemplateMapping
    | mapToClass = Athlete
    | mappings =
        {{ PropertyMapping | templateProperty = name | ontologyProperty = foaf:name }}
        {{ PropertyMapping | templateProperty = nationalitaet | ontologyProperty = nationality }}
        {{ PropertyMapping | templateProperty = debut_saison | ontologyProperty = activeYearsStartYear }}
        {{ PropertyMapping | templateProperty = letzte_saison | ontologyProperty = activeYearsEndYear }}
-       {{ PropertyMapping | templateProperty = team | ontologyProperty = club }}
+       {{ PropertyMapping | templateProperty = team | ontologyProperty = team }}
 }}
 
 &lt;!-- 
