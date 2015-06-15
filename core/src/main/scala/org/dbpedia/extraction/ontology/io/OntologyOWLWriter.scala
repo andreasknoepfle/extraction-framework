@@ -9,7 +9,7 @@ import org.dbpedia.extraction.ontology.datatypes.{Datatype, DimensionDatatype, U
 class OntologyOWLWriter(val version: String, val writeSpecificProperties: Boolean = true)
 {
 
-    private val EXPORT_EXTERNAL = false  // export owl, foaf, rdf, rdfs etc.
+    private val EXPORT_EXTERNAL = true  // export owl, foaf, rdf, rdfs etc.
     
     def write(ontology : Ontology) : scala.xml.Elem =
     {
@@ -33,27 +33,34 @@ class OntologyOWLWriter(val version: String, val writeSpecificProperties: Boolea
           xmlns:dul="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
           xmlns:wikidata="http://www.wikidata.org/entity/"
           xmlns:cidoccrm="http://purl.org/NET/cidoc-crm/core#"
-          xmlns:wgs84pos="http://www.w3.org/2003/01/geo/wgs84_pos#"
           xmlns:dc="http://purl.org/dc/elements/1.1/"
-          xmlns:dcterms="http://purl.org/dc/terms/"
+          xmlns:dct="http://purl.org/dc/terms/"
           xmlns:vann="http://purl.org/vocab/vann/"
           xmlns:cc="http://creativecommons.org/ns#"
-          xmlns:foaf="http://xmlns.com/foaf/0.1/" >
+          xmlns:foaf="http://xmlns.com/foaf/0.1/"
+          xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+          xmlns:georss="http://www.georss.org/georss/"
+          xmlns:gml="http://www.opengis.net/gml/"
+          xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+          xmlns:schema="http://schema.org/"
+          xmlns:bibo="http://purl.org/ontology/bibo/"
+          xmlns:mappings="http://mappings.dbpedia.org/wiki/"
+          xmlns:bio="http://purl.org/vocab/bio/0.1/">
 
           <owl:Ontology rdf:about="http://dbpedia.org/ontology/">
             <rdf:type rdf:resource="http://purl.org/vocommons/voaf#Vocabulary"/>
             <vann:preferredNamespacePrefix>dbo</vann:preferredNamespacePrefix>
             <vann:preferredNamespaceUri>http://dbpedia.org/ontology/</vann:preferredNamespaceUri>
-            <dcterms:title xml:lang="en">The DBpedia Ontology</dcterms:title>
-            <dcterms:description xml:lang="en">
+            <dct:title xml:lang="en">The DBpedia Ontology</dct:title>
+            <dct:description xml:lang="en">
               The DBpedia ontology provides the classes and properties used in the DBpedia data set.
-            </dcterms:description>
+            </dct:description>
             <foaf:homepage rdf:resource="http://wiki.dbpedia.org/Ontology" />
-            <dcterms:source rdf:resource="http://mappings.dbpedia.org"/>
-            <dcterms:publisher>DBpedia Maintainers</dcterms:publisher>
-            <dcterms:creator>DBpedia Maintainers and Contributors</dcterms:creator>
-            <dcterms:issued>2008-11-17T12:00Z</dcterms:issued>
-            <dcterms:modified>{currentTimeStamp}</dcterms:modified>
+            <dct:source rdf:resource="http://mappings.dbpedia.org"/>
+            <dct:publisher>DBpedia Maintainers</dct:publisher>
+            <dct:creator>DBpedia Maintainers and Contributors</dct:creator>
+            <dct:issued>2008-11-17T12:00Z</dct:issued>
+            <dct:modified>{currentTimeStamp}</dct:modified>
             <owl:versionInfo xml:lang="en">{version}</owl:versionInfo>
             <rdfs:comment xml:lang="en">
               This ontology is generated from the manually created specifications in the DBpedia Mappings
@@ -65,7 +72,7 @@ class OntologyOWLWriter(val version: String, val writeSpecificProperties: Boolea
             <cc:license rdf:resource="http://creativecommons.org/licenses/by-sa/3.0/" />
           </owl:Ontology>
         {
-            //Write classes from the default namespace (Don't write owl, rdf and rdfs built-in classes etc.)
+            //Write classes from the default namespace
             val classes = for(ontologyClass <- ontology.classes.values if (EXPORT_EXTERNAL || !ontologyClass.isExternalClass))
                 yield writeClass(ontologyClass)
 
@@ -202,11 +209,12 @@ class OntologyOWLWriter(val version: String, val writeSpecificProperties: Boolea
             }
             case datatypeProperty : OntologyDatatypeProperty =>
             {
-               datatypeProperty.range match
-               {
-                   case dimension: DimensionDatatype => xml += <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double" />
-                   case _ => xml += <rdfs:range rdf:resource={datatypeProperty.range.uri} />
-               }
+               //datatypeProperty.range match
+               //{
+                //   case dimension: DimensionDatatype => xml += <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double" />
+               //    case _ =>
+                     xml += <rdfs:range rdf:resource={datatypeProperty.range.uri} />
+               //}
             }
             case _ =>
         }
