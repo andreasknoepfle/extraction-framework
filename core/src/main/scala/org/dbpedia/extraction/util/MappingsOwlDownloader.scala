@@ -7,10 +7,15 @@ import java.util.logging.Level
 import org.dbpedia.extraction.mappings.{MappingOntology, TableMapping}
 import org.dbpedia.extraction.sources.WikiSource
 import org.dbpedia.extraction.wikiparser._
+import org.semanticweb.owlapi.apibinding.OWLManager
 
 object MappingsOwlDownloader {
   val apiUrl = Language.Mappings.apiUri
   val parser = WikiParser.getInstance()
+  val manager = OWLManager.createOWLOntologyManager()
+  //	    // load the importing ontology
+  val DBpediaontology = manager.loadOntologyFromOntologyDocument(new File("/home/andi/git/dbpedia-mappings/dbpedia.owl"));
+
 
   def main(args: Array[String]): Unit = {
     require(args != null && args.length == 1, "expected one argument for mappings target directory")
@@ -33,7 +38,7 @@ object MappingsOwlDownloader {
       println("Downloading Owl: " + namespace.name(Language.Mappings))
       mappingPageSource.map(parser).flatten.foreach {
         case page => for {node <- page.children if node.isInstanceOf[TemplateNode]} {
-          new MappingOwlConverter(page, node, mappingOntology).convert
+          new MappingOwlConverter(page, node, mappingOntology, DBpediaontology ).convert
         }
       }
     }
