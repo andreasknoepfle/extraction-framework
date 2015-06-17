@@ -1,6 +1,6 @@
 package org.dbpedia.extraction.util
 
-import org.dbpedia.extraction.mappings.MappingOntology
+import org.dbpedia.extraction.mappings.{TemplateMappingParameter, MappingOntology}
 import org.dbpedia.extraction.wikiparser.{TemplateNode, Node, PageNode}
 import org.semanticweb.owlapi.model.{OWLClass, OWLProperty}
 
@@ -10,6 +10,7 @@ class MappingOwlConverter(page: PageNode, node: Node, mappingOntology: MappingOn
   val name = page.title.decoded
 
   def convertTemplateMapping(tnode: TemplateNode, name: String): Unit = {
+
     val mapToClass = fetchOntologyClass(tnode,"mapToClass")
     val correspondingClass = fetchOntologyClass(tnode,"correspondingClass")
     val correspondingProperty = fetchOntologyProperty(tnode,"correspondingProperty")
