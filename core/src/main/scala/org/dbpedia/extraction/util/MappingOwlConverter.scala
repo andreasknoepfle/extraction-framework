@@ -7,13 +7,15 @@ import org.semanticweb.owlapi.apibinding.OWLManager
 import org.semanticweb.owlapi.model._
 import org.semanticweb.owlapi.util.DefaultPrefixManager
 
-class MappingOwlConverter(page: PageNode, node: Node, mappingOntology: MappingOntology, DBpediaOntology: OWLOntology) {
+class MappingOwlConverter(page: PageNode, node: Node, mappingOntology: MappingOntology, ontology: OWLOntology) {
   val rootNode = node.asInstanceOf[TemplateNode]
   val templateName = page.title.decoded
-  val manager = OWLManager.createOWLOntologyManager()
-  val factory = DBpediaOntology.getOWLOntologyManager().getOWLDataFactory()
-  val prefixManager = new DefaultPrefixManager(manager.getOntologyFormat(DBpediaOntology).asPrefixOWLOntologyFormat());
-
+  val prefixManager = ontology.getOWLOntologyManager.getOntologyFormat(ontology).asPrefixOWLOntologyFormat()
+  prefixManager.setPrefix("geo","http://dummy.geo")
+  prefixManager.setPrefix("skos","http://dummy.skos")
+  prefixManager.setPrefix("dct","http://dummy.dct")
+  prefixManager.setPrefix("georss","http://dummy.georss")
+  prefixManager.setPrefix("bibo","http://dummy.bibo")
   def convert: Unit = {
     rootNode.title.decoded match {
       case "TemplateMapping" => {
@@ -25,7 +27,7 @@ class MappingOwlConverter(page: PageNode, node: Node, mappingOntology: MappingOn
       case "ConditionalMapping" => {
         convertConditionalMapping(rootNode,templateName)
       }
-      case _ => throw new scala.IllegalArgumentException("Unknown mapping element " + tnode.title.decoded)
+      case _ => throw new scala.IllegalArgumentException("Unknown mapping element " + rootNode.title.decoded )
     }
   }
 
@@ -34,9 +36,9 @@ class MappingOwlConverter(page: PageNode, node: Node, mappingOntology: MappingOn
   def convertTemplateMapping(tnode: TemplateNode, name: String): Unit = {
     val templateMapping = mappingOntology.createTemplateMapping(name,
       TemplateMappingParameters(
-        fetchOntologyClass(tnode,"mapToClass"),
-        fetchOntologyClass(tnode,"correspondingClass"),
-        fetchOntologyProperty(tnode,"correspondingProperty")))
+        fetchOntologyIRI(tnode,"mapToClass").get,
+        fetchOntologyIRI(tnode,"correspondingClass"),
+        fetchOntologyIRI(tnode,"correspondingProperty")))
     extractPropertyMappings(tnode, templateMapping, "mappings")
   }
 
@@ -52,17 +54,21 @@ class MappingOwlConverter(page: PageNode, node: Node, mappingOntology: MappingOn
 
   def convertConditionMapping(conditionNode: TemplateNode, conditionalMapping: OWLClass, conditionalName : String) = {
     val templateProperty = fetchTemplateProperty(conditionNode, "templateProperty")
-    val operator = fetchTemplateProperty(conditionNode, "operator")
-    val value = fetchTemplateProperty(conditionNode, "value"))
+    val operator = fetchTemplateProperty(conditionNode, "operator").get
+    val value = fetchTemplateProperty(conditionNode, "value")
 
-    val tnode = conditionNode.property("mapping").asInstanceOf[TemplateNode]
-    val name = List(conditionalName,templateProperty , operator, value).mkString("_")
+    val tnode = conditionNode.property("mapping").flatMap(mappingNode =>
+      mappingNode.children.filter(childNode =>
+        childNode.isInstanceOf[TemplateNode]).headOption)
+      .getOrElse(throw new IllegalArgumentException("Condition does not define a mapping"))
+      .asInstanceOf[TemplateNode]
+    val name = List(conditionalName,templateProperty.getOrElse("") , operator, value).mkString("_")
     val templateMapping = mappingOntology.createConditionMapping(name, conditionalMapping,
       ConditionMappingParameters(templateProperty,operator,value),
       TemplateMappingParameters(
-        fetchOntologyClass(tnode,"mapToClass"),
-        fetchOntologyClass(tnode,"correspondingClass"),
-        fetchOntologyProperty(tnode,"correspondingProperty")))
+        fetchOntologyIRI(tnode,"mapToClass").get,
+        fetchOntologyIRI(tnode,"correspondingClass"),
+        fetchOntologyIRI(tnode,"correspondingProperty")))
 
     extractPropertyMappings(tnode, templateMapping,"mappings")
   }
@@ -79,47 +85,47 @@ class MappingOwlConverter(page: PageNode, node: Node, mappingOntology: MappingOn
     {
       case "PropertyMapping" =>
       {
-        val templateProperty = fetchTemplateProperty(tnode,"templateProperty")
+        val templateProperty = fetchTemplateProperty(tnode,"templateProperty").get
         mappingOntology.createSimplePropertyMapping(
           templateProperty,
           parentMapping,
           SimplePropertyMappingParameters(
             templateProperty,
-            fetchOntologyProperty(tnode,"ontologyProperty"),
+            fetchOntologyIRI(tnode,"ontologyProperty").get,
             fetchTemplateProperty(tnode,"select"),
             fetchTemplateProperty(tnode,"prefix"),
             fetchTemplateProperty(tnode,"suffix"),
             fetchTemplateProperty(tnode,"transform"),
-            fetchOntologyDatatype(tnode,"unit"),
+            fetchOntologyIRI(tnode,"unit"),
             fetchTemplateProperty(tnode,"language"),
             fetchDoubleTemplateProperty(tnode,"factor")
         ))
       }
       case "IntermediateNodeMapping" =>
       {
-        val nodeClass = fetchOntologyClass(tnode,"nodeClass")
+        val nodeClass = fetchOntologyIRI(tnode,"nodeClass").get
         val mapping = mappingOntology.createIntermediateNodeMapping(
           parentMapping,
           IntermediateNodeMappingParameters(
             nodeClass,
-            fetchOntologyProperty(tnode,"correspondingProperty")
+            fetchOntologyIRI(tnode,"correspondingProperty").get
           ))
         extractPropertyMappings(tnode, mapping, "mappings")
       }
       case "DateIntervalMapping" =>
       {
-        val templateProperty = fetchTemplateProperty(tnode,"templateProperty")
+        val templateProperty = fetchTemplateProperty(tnode,"templateProperty").get
         mappingOntology.createDateIntervalMapping(templateProperty, parentMapping,
           DateIntervalMappingParameters(
             templateProperty,
-            fetchOntologyProperty(tnode,"startDateOntologyProperty"),
-            fetchOntologyProperty(tnode,"endDateOntologyProperty")
+            fetchOntologyIRI(tnode,"startDateOntologyProperty").get,
+            fetchOntologyIRI(tnode,"endDateOntologyProperty").get
           ))
       }
       case "CombineDateMapping" =>
       {
-        val templateProperty1 = fetchTemplateProperty(tnode,"templateProperty1")
-        val templateProperty2 = fetchTemplateProperty(tnode,"templateProperty2")
+        val templateProperty1 = fetchTemplateProperty(tnode,"templateProperty1").get
+        val templateProperty2 = fetchTemplateProperty(tnode,"templateProperty2").get
         val templateProperty3 = fetchTemplateProperty(tnode,"templateProperty3")
 
         val propertyName =  List(templateProperty1, templateProperty2, templateProperty3).mkString("_")
@@ -129,10 +135,10 @@ class MappingOwlConverter(page: PageNode, node: Node, mappingOntology: MappingOn
             templateProperty1,
             templateProperty2,
             templateProperty3,
-            fetchOntologyDatatype(tnode,"unit1"),
-            fetchOntologyDatatype(tnode,"unit2"),
-            fetchOntologyDatatype(tnode,"unit3"),
-            fetchOntologyProperty(tnode, "ontologyProperty")
+            fetchOntologyIRI(tnode,"unit1").get,
+            fetchOntologyIRI(tnode,"unit2").get,
+            fetchOntologyIRI(tnode,"unit3"),
+            fetchOntologyIRI(tnode, "ontologyProperty").get
           ))
       }
       case "CalculateMapping" =>
@@ -142,12 +148,12 @@ class MappingOwlConverter(page: PageNode, node: Node, mappingOntology: MappingOn
         val propertyName =  List(templateProperty1, templateProperty2).mkString("_")
         mappingOntology.createCalculateMapping(propertyName, parentMapping,
           CalculateMappingParameters(
-            templateProperty1,
-            templateProperty2,
-            fetchOntologyDatatype(tnode,"unit1"),
-            fetchOntologyDatatype(tnode,"unit2"),
-            fetchTemplateProperty(tnode,"operation"),
-            fetchOntologyProperty(tnode, "ontologyProperty")
+            templateProperty1.get,
+            templateProperty2.get,
+            fetchOntologyIRI(tnode,"unit1"),
+            fetchOntologyIRI(tnode,"unit2"),
+            fetchTemplateProperty(tnode,"operation").get,
+            fetchOntologyIRI(tnode, "ontologyProperty").get
           ))
 
 
@@ -174,14 +180,14 @@ class MappingOwlConverter(page: PageNode, node: Node, mappingOntology: MappingOn
       }
       case "ConstantMapping" =>
       {
-        val value = fetchTemplateProperty(tnode, "value")
+        val ontologyProperty = fetchOntologyIRI(tnode, "ontologyProperty").get
         mappingOntology.createConstantMapping(
-          value,
+          ontologyProperty.getShortForm,
           parentMapping,
           ConstantMappingParameters(
-            fetchOntologyProperty(tnode, "ontologyProperty"),
-            value,
-            fetchOntologyDatatype(tnode,"unit1")
+            ontologyProperty,
+            fetchTemplateProperty(tnode, "value").get,
+            fetchOntologyIRI(tnode,"unit1")
           )
         )
       }
@@ -189,34 +195,23 @@ class MappingOwlConverter(page: PageNode, node: Node, mappingOntology: MappingOn
     }
   }
 
-  def fetchOntologyClass(tnode: TemplateNode, attribute: String): OWLClass = {
-    factory.getOWLClass(fetchOntologyIRI(tnode,attribute))
-  }
 
-  def fetchOntologyProperty(tnode: TemplateNode, attribute: String): OWLProperty = {
-
-  }
-
-  def fetchOntologyDatatype(tnode: TemplateNode, attribute: String): OWLDatatype = {
-
-  }
-
-  def fetchDoubleTemplateProperty(tnode: TemplateNode, attribute: String): Double = {
-
-  }
-
-  def fetchOntologyIRI(tnode: TemplateNode, attribute: String): IRI = {
-    tnode.property("templateProperty").flatMap(attribute => StringParser.parse(tnode)) match {
-      case Some(str) => prefixManager.getIRI(str)
-      case None => null
+  def fetchDoubleTemplateProperty(tnode: TemplateNode, attribute: String): Option[Double] = {
+    fetchTemplateProperty(tnode, attribute) match {
+      case Some(str) => Some(str.asInstanceOf[String].toDouble)
+      case None => None
     }
   }
 
-  def fetchTemplateProperty(tnode: TemplateNode, attribute: String): String = {
-    tnode.property("templateProperty").flatMap(attribute => StringParser.parse(tnode)) match {
-      case Some(str) => str
-      case None => null
+  def fetchOntologyIRI(tnode: TemplateNode, attribute: String): Option[IRI] = {
+    fetchTemplateProperty(tnode,attribute) match {
+      case Some(str) => Some(prefixManager.getIRI(str))
+      case None => None
     }
+  }
+
+  def fetchTemplateProperty(tnode: TemplateNode, attribute: String): Option[String] = {
+    tnode.property(attribute).flatMap(propertyNode => StringParser.parse(propertyNode))
   }
 
 

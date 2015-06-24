@@ -8,13 +8,13 @@ import org.dbpedia.extraction.mappings.{MappingOntology, TableMapping}
 import org.dbpedia.extraction.sources.WikiSource
 import org.dbpedia.extraction.wikiparser._
 import org.semanticweb.owlapi.apibinding.OWLManager
+import org.semanticweb.owlapi.model.OWLOntology
 
 object MappingsOwlDownloader {
   val apiUrl = Language.Mappings.apiUri
   val parser = WikiParser.getInstance()
   val manager = OWLManager.createOWLOntologyManager()
   //	    // load the importing ontology
-  val DBpediaontology = manager.loadOntologyFromOntologyDocument(new File("/home/andi/git/dbpedia-mappings/dbpedia.owl"));
 
 
   def main(args: Array[String]): Unit = {
@@ -23,11 +23,12 @@ object MappingsOwlDownloader {
 
     // don't use mkdirs, that often masks mistakes.
     require(dir.isDirectory || dir.mkdir, "directory [" + dir + "] does not exist and cannot be created")
+    val ontology = manager.loadOntologyFromOntologyDocument(new File("owlfile.owl"));
 
-    downloadMappings(dir)
+    downloadMappings(dir, ontology)
   }
 
-  def downloadMappings(dir: File): Unit = {
+  def downloadMappings(dir: File, ontology: OWLOntology): Unit = {
     Namespace.mappings.values.par.foreach { namespace =>
       val language = namespace.name(Language.Mappings)
       val file = new File(dir, language.replace(' ', '_') + ".owl")
@@ -38,9 +39,19 @@ object MappingsOwlDownloader {
       println("Downloading Owl: " + namespace.name(Language.Mappings))
       mappingPageSource.map(parser).flatten.foreach {
         case page => for {node <- page.children if node.isInstanceOf[TemplateNode]} {
-          new MappingOwlConverter(page, node, mappingOntology, DBpediaontology ).convert
+          try {
+            new MappingOwlConverter(page, node, mappingOntology, ontology ).convert
+          } catch {
+            case e: Exception => System.err.println("Error on page " + namespace.name +
+              "/" + page.title.decoded + ": " + e.getMessage)
+          }
+
         }
       }
+      println("Converted ... Writing Ontology ...")
+      mappingOntology.saveOntology(ontology)
+      println("Written")
+
     }
   }
 
