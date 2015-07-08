@@ -11,7 +11,7 @@ import datatypes._
  * @param specializations Map of all ontology properties which are specialized to a specific datatype.
  * Example: The entry (Person, height) -> centimetre denotes a specialized property Person/height which has the range centimetres.
  */
-class Ontology ( 
+class Ontology (
   val classes : Map[String, OntologyClass],
   val properties : Map[String, OntologyProperty],
   val datatypes : Map[String, Datatype],

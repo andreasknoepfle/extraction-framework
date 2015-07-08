@@ -1,21 +1,15 @@
-package org.dbpedia.extraction.util
+package org.dbpedia.extraction.owlmappings
 
 import org.dbpedia.extraction.dataparser.StringParser
-import org.dbpedia.extraction.mappings._
-import org.dbpedia.extraction.wikiparser.{TemplateNode, Node, PageNode}
-import org.semanticweb.owlapi.apibinding.OWLManager
+import org.dbpedia.extraction.wikiparser.{Node, PageNode, TemplateNode}
 import org.semanticweb.owlapi.model._
-import org.semanticweb.owlapi.util.DefaultPrefixManager
 
-class MappingOwlConverter(page: PageNode, node: Node, mappingOntology: MappingOntology, ontology: OWLOntology) {
+class MappingOwlConverter(page: PageNode, node: Node, mappingOntology: MappingOntology, ontology: OWLOntology, prefixManager: PrefixManager) {
   val rootNode = node.asInstanceOf[TemplateNode]
   val templateName = page.title.decoded
-  val prefixManager = ontology.getOWLOntologyManager.getOntologyFormat(ontology).asPrefixOWLOntologyFormat()
-  prefixManager.setPrefix("geo","http://dummy.geo")
-  prefixManager.setPrefix("skos","http://dummy.skos")
-  prefixManager.setPrefix("dct","http://dummy.dct")
-  prefixManager.setPrefix("georss","http://dummy.georss")
-  prefixManager.setPrefix("bibo","http://dummy.bibo")
+
+
+
   def convert: Unit = {
     rootNode.title.decoded match {
       case "TemplateMapping" => {
@@ -165,6 +159,7 @@ class MappingOwlConverter(page: PageNode, node: Node, mappingOntology: MappingOn
           "coordinates",
           parentMapping,
           GeocoordinatesMappingParameters(
+            fetchOntologyIRI(tnode,"ontologyProperty"),
             fetchTemplateProperty(tnode, "coordinates"),
             fetchTemplateProperty(tnode, "latitude"),
             fetchTemplateProperty(tnode, "longitude"),
