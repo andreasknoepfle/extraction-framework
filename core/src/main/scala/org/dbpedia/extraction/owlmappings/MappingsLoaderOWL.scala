@@ -25,7 +25,8 @@ object MappingsLoaderOWL {
     def ontology: Ontology
     def language: Language
     def redirects: Redirects
-    def mappingOntology: MappingOntology}): Mappings = {
+    def mappingOntology: MappingOntology
+    def prefixConverter: OWLPrefixConverter}): Mappings = {
     logger.info("Loading mappings (" + context.language.wikiCode + ")")
     val classMappings = new HashMap[String, Extractor[TemplateNode]]()
     val tableMappings = new ArrayBuffer[TableMapping]()
@@ -33,11 +34,16 @@ object MappingsLoaderOWL {
     logger.info(owlClassMappings.size + " Mappings found in " + context.language.wikiCode)
 
     for (mapping <- owlClassMappings) {
-      context.mappingOntology.getClassMappingType(mapping) match {
-        case "TemplateMapping" =>
-          loadTemplateMapping(mapping, context)
-        case "ConditionalMapping" =>
-          loadConditionalMapping(mapping, context)
+      try {
+        context.mappingOntology.getClassMappingType(mapping) match {
+          case "TemplateMapping" =>
+            loadTemplateMapping(mapping, context)
+          case "ConditionalMapping" =>
+            loadConditionalMapping(mapping, context)
+        }
+      } catch {
+        case e: Exception =>
+          logger.warning("Could not load Mapping " + mapping.getIRI + ": " + e.getMessage)
       }
     }
 
@@ -50,12 +56,13 @@ object MappingsLoaderOWL {
     def ontology: Ontology
     def language: Language
     def redirects: Redirects
-    def mappingOntology: MappingOntology}) = {
+    def mappingOntology: MappingOntology
+    def prefixConverter: OWLPrefixConverter}) = {
     val mappingParameters = context.mappingOntology.getTemplateMappingParameters(mapping)
     new TemplateMapping(
-      loadOntologyClass(mappingParameters.mapToClass, context.ontology),
-      loadOntologyClass(mappingParameters.correspondingClass.orNull, context.ontology),
-      loadOntologyProperty(mappingParameters.correspondingProperty.orNull, context.ontology),
+      loadOntologyClass(mappingParameters.mapToClass, context),
+      loadOntologyClass(mappingParameters.correspondingClass.orNull, context),
+      loadOntologyProperty(mappingParameters.correspondingProperty.orNull, context),
       loadPropertyMappings(mapping, context),
       context)
   }
@@ -64,7 +71,8 @@ object MappingsLoaderOWL {
     def ontology: Ontology
     def language: Language
     def redirects: Redirects
-    def mappingOntology: MappingOntology}): List[PropertyMapping] = {
+    def mappingOntology: MappingOntology
+    def prefixConverter: OWLPrefixConverter}): List[PropertyMapping] = {
     var mappings = List[PropertyMapping]()
 
     for (intermediateNodeMapping <- context.mappingOntology.getIntermediateNodeMappings(mapping)) {
@@ -82,11 +90,12 @@ object MappingsLoaderOWL {
     def ontology: Ontology
     def language: Language
     def redirects: Redirects
-    def mappingOntology: MappingOntology}): IntermediateNodeMapping = {
+    def mappingOntology: MappingOntology
+    def prefixConverter: OWLPrefixConverter}): IntermediateNodeMapping = {
     val mappingParameters = context.mappingOntology.getIntermediateNodeMappingParameters(mapping)
     new IntermediateNodeMapping(
-      loadOntologyClass(mappingParameters.nodeClass, context.ontology),
-      loadOntologyProperty(mappingParameters.correspondingProperty, context.ontology),
+      loadOntologyClass(mappingParameters.nodeClass, context),
+      loadOntologyProperty(mappingParameters.correspondingProperty, context),
       loadPropertyMappings(mapping, context),
       context
     )
@@ -97,38 +106,39 @@ object MappingsLoaderOWL {
     def ontology: Ontology
     def language: Language
     def redirects: Redirects
-    def mappingOntology: MappingOntology}) =
+    def mappingOntology: MappingOntology
+    def prefixConverter: OWLPrefixConverter}) =
 
     context.mappingOntology.getPropertyMappingParameters(mapping, property) match {
       case SimplePropertyMappingParameters(templateProperty, ontologyProperty, select, prefix, suffix,
       transform, unit, language, factor) => {
         new SimplePropertyMapping(templateProperty,
-          loadOntologyProperty(ontologyProperty, context.ontology),
+          loadOntologyProperty(ontologyProperty, context),
           select.orNull,
           prefix.orNull,
           suffix.orNull,
           transform.orNull,
-          loadDatatype(unit.orNull, context.ontology),
+          loadDatatype(unit.orNull, context),
           loadLanguage(language.orNull),
           factor.getOrElse(1),
           context)
       }
       case DateIntervalMappingParameters(templateProperty, startDateOntologyProperty, endDateOntologyProperty) => {
         new DateIntervalMapping(templateProperty,
-          loadOntologyProperty(startDateOntologyProperty, context.ontology),
-          loadOntologyProperty(endDateOntologyProperty, context.ontology),
+          loadOntologyProperty(startDateOntologyProperty, context),
+          loadOntologyProperty(endDateOntologyProperty, context),
           context)
       }
       case CombineDateMappingParameters(templateProperty1, templateProperty2, templateProperty3,
       unit1, unit2, unit3, ontologyProperty) => {
         // TODO: change the syntax on the mappings wiki to allow an arbitrary number of template properties.
         val templateProperties = new HashMap[String, Datatype]()
-        templateProperties(templateProperty1) = loadDatatype(unit1, context.ontology)
-        templateProperties(templateProperty2) = loadDatatype(unit2, context.ontology)
+        templateProperties(templateProperty1) = loadDatatype(unit1, context)
+        templateProperties(templateProperty2) = loadDatatype(unit2, context)
         if (templateProperty3.nonEmpty)
-          templateProperties(templateProperty3.get) = loadDatatype(unit3.orNull, context.ontology)
+          templateProperties(templateProperty3.get) = loadDatatype(unit3.orNull, context)
         new CombineDateMapping(
-          loadOntologyProperty(ontologyProperty, context.ontology),
+          loadOntologyProperty(ontologyProperty, context),
           templateProperties,
           context)
       }
@@ -137,17 +147,17 @@ object MappingsLoaderOWL {
         new CalculateMapping(
           templateProperty1,
           templateProperty2,
-          loadDatatype(unit1.orNull, context.ontology),
-          loadDatatype(unit2.orNull, context.ontology),
+          loadDatatype(unit1.orNull, context),
+          loadDatatype(unit2.orNull, context),
           operation,
-          loadOntologyProperty(ontologyProperty, context.ontology),
+          loadOntologyProperty(ontologyProperty, context),
           context)
       }
       case GeocoordinatesMappingParameters(ontologyProperty, coordinates, latitude, longitude, longitudeDegrees, longitudeMinutes,
       longitudeSeconds, longitudeDirection, latitudeDegrees, latitudeMinutes,
       latitudeSeconds, latitudeDirection) => {
         new GeoCoordinatesMapping(
-          loadOntologyProperty(ontologyProperty.orNull, context.ontology),
+          loadOntologyProperty(ontologyProperty.orNull, context),
           coordinates.orNull,
           latitude.orNull,
           longitude.orNull,
@@ -162,19 +172,20 @@ object MappingsLoaderOWL {
           context)
       }
       case ConstantMappingParameters(ontologyProperty, value, unit) => {
-        new ConstantMapping(loadOntologyProperty(ontologyProperty, context.ontology),
+        new ConstantMapping(loadOntologyProperty(ontologyProperty, context),
           value,
-          loadDatatype(unit.orNull, context.ontology),
+          loadDatatype(unit.orNull, context),
           context)
       }
     }
 
 
   private def loadConditionalMapping(mapping : OWLClass, context : {
-    def ontology : Ontology
-    def language : Language
-    def redirects : Redirects
-    def mappingOntology : MappingOntology} ): ConditionalMapping = {
+    def ontology: Ontology
+    def language: Language
+    def redirects: Redirects
+    def mappingOntology: MappingOntology
+    def prefixConverter: OWLPrefixConverter} ): ConditionalMapping = {
 
     val conditionMappings = for(condition <- context.mappingOntology.getConditionMappings(mapping))
       yield loadConditionMapping(condition, context)
@@ -183,10 +194,11 @@ object MappingsLoaderOWL {
   }
 
   private def loadConditionMapping(mapping: OWLClass , context : {
-    def ontology : Ontology
-    def language : Language
-    def redirects : Redirects
-    def mappingOntology : MappingOntology} ): ConditionMapping = {
+    def ontology: Ontology
+    def language: Language
+    def redirects: Redirects
+    def mappingOntology: MappingOntology
+    def prefixConverter: OWLPrefixConverter} ): ConditionMapping = {
     val mappingParameters = context.mappingOntology.getConditionMappingParameters(mapping)
     new ConditionMapping(
       mappingParameters.templateProperty.orNull,
@@ -196,16 +208,40 @@ object MappingsLoaderOWL {
     )
   }
 
-  private def loadOntologyClass(iri : IRI, ontology : Ontology) : OntologyClass = {
-    ontology.classes(iri.toString)
+  private def loadOntologyClass(iri : IRI, context : {
+    def ontology: Ontology
+    def language: Language
+    def redirects: Redirects
+    def mappingOntology: MappingOntology
+    def prefixConverter: OWLPrefixConverter} ) : OntologyClass = {
+    iri match {
+      case some: IRI => context.ontology.classes(context.prefixConverter.getPrefixIRI(iri))
+      case null => null
+    }
   }
 
-  private def loadDatatype(iri : IRI, ontology : Ontology) : Datatype = {
-    ontology.datatypes(iri.toString)
+  private def loadDatatype(iri : IRI, context : {
+    def ontology: Ontology
+    def language: Language
+    def redirects: Redirects
+    def mappingOntology: MappingOntology
+    def prefixConverter: OWLPrefixConverter} ) : Datatype = {
+    iri match {
+      case some: IRI => context.ontology.datatypes(context.prefixConverter.getPrefixIRI(iri))
+      case null => null
+    }
   }
 
-  private def loadOntologyProperty(iri : IRI, ontology : Ontology) : OntologyProperty = {
-    ontology.properties(iri.toString)
+  private def loadOntologyProperty(iri : IRI, context : {
+    def ontology: Ontology
+    def language: Language
+    def redirects: Redirects
+    def mappingOntology: MappingOntology
+    def prefixConverter: OWLPrefixConverter} ) : OntologyProperty = {
+    iri match {
+      case some: IRI => context.ontology.properties(context.prefixConverter.getPrefixIRI(iri))
+      case null => null
+    }
   }
 
   private def loadLanguage(language: String) : Language = {

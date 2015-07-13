@@ -9,11 +9,12 @@ import org.dbpedia.extraction.dump.download.Download
 import org.dbpedia.extraction.dump.extract.{Config, DumpExtractionContext, ExtractionJob}
 import org.dbpedia.extraction.mappings._
 import org.dbpedia.extraction.ontology.io.OntologyReader
-import org.dbpedia.extraction.owlmappings.{MappingOntology, MappingsLoaderOWL, OntologyReaderOWL}
+import org.dbpedia.extraction.owlmappings._
 import org.dbpedia.extraction.sources.{WikiSource, XMLSource}
 import org.dbpedia.extraction.util.RichFile.wrapFile
 import org.dbpedia.extraction.util.{ExtractorUtils, Finder, IOUtils, Language}
 import org.dbpedia.extraction.wikiparser._
+import org.semanticweb.owlapi.apibinding.OWLManager
 
 import scala.collection.mutable.{ArrayBuffer, HashMap}
 
@@ -77,7 +78,7 @@ class ConfigLoaderOWL(config: Config)
             
             def mappingOntology : MappingOntology = _mappingOntology
     
-            private lazy val _mappings =
+            private lazy val _mappings: Mappings =
             {
                 MappingsLoaderOWL.load(this)
             }
@@ -116,6 +117,13 @@ class ConfigLoaderOWL(config: Config)
             }
 
             def disambiguations : Disambiguations = if (_disambiguations != null) _disambiguations else new Disambiguations(Set[Long]())
+
+            def prefixConverter : OWLPrefixConverter = _prefixConverter
+
+            private lazy val _prefixConverter =
+            {
+              new OWLPrefixConverter(ontologySource)
+            }
         }
 
         //Extractors
@@ -167,31 +175,14 @@ class ConfigLoaderOWL(config: Config)
       files
     }
 
+    private val ontologySource =
+      OWLManager.createOWLOntologyManager().loadOntologyFromOntologyDocument(config.ontologyFile)
+
+
     //language-independent val
     private lazy val _ontology =
     {
-//        if (config.ontologyFile != null && config.ontologyFile.isFile)
-//        {
-//          new OntologyReaderOWL(config.ontologyFile).read()
-//        }
-//        else
-//        {
-//          throw new IllegalArgumentException("ontologyFile not specified or invalid")
-//        }
-
-        val ontologySource = if (config.ontologyFile != null && config.ontologyFile.isFile)
-        {
-          XMLSource.fromFile(config.ontologyFile, Language.Mappings)
-        }
-        else
-        {
-          val namespaces = Set(Namespace.OntologyClass, Namespace.OntologyProperty)
-          val url = new URL(Language.Mappings.apiUri)
-          val language = Language.Mappings
-          WikiSource.fromNamespaces(namespaces, url, language)
-        }
-
-        new OntologyReader().read(ontologySource)
+        new OntologyReaderOWL(ontologySource).read()
 
     }
 

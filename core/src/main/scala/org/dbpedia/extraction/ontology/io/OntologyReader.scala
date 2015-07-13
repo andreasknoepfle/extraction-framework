@@ -326,7 +326,7 @@ class OntologyReader
       None
     }
     
-    private class OntologyBuilder
+    protected class OntologyBuilder
     {
         var classes = List[ClassBuilder]()
         var properties = List[PropertyBuilder]()
@@ -350,7 +350,7 @@ class OntologyReader
         }
     }
 
-    private class ClassBuilder(val name : String, val labels : Map[Language, String], val comments : Map[Language, String],
+  protected class ClassBuilder(val name : String, val labels : Map[Language, String], val comments : Map[Language, String],
                                var baseClassNames : List[String], val equivClassNames : Set[String], val disjClassNames : Set[String])
     {
         require(name != null, "name != null")
@@ -429,7 +429,7 @@ class OntologyReader
         }
     }
 
-    private class PropertyBuilder(val name : String, val labels : Map[Language, String], val comments : Map[Language, String],
+  protected class PropertyBuilder(val name : String, val labels : Map[Language, String], val comments : Map[Language, String],
                                   val isObjectProperty : Boolean, val isFunctional : Boolean, val domain : String, val range : String,
                                   val equivPropertyNames : Set[String], val superPropertyNames : Set[String] = Set())
     {
@@ -511,7 +511,7 @@ class OntologyReader
         }
     }
 
-    private class SpecificPropertyBuilder(val className : String, val propertyName : String, val datatypeName : String)
+  protected class SpecificPropertyBuilder(val className : String, val propertyName : String, val datatypeName : String)
     {
         require(className != null, "className != null")
         require(propertyName != null, "propertyName != null")

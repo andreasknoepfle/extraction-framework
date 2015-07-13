@@ -2,7 +2,7 @@ package org.dbpedia.extraction.dump.owlextract
 
 import org.dbpedia.extraction.mappings.{Disambiguations, Mappings, Redirects}
 import org.dbpedia.extraction.ontology.Ontology
-import org.dbpedia.extraction.owlmappings.MappingOntology
+import org.dbpedia.extraction.owlmappings.{MappingOntology,OWLPrefixConverter}
 import org.dbpedia.extraction.sources.{Source, WikiPage}
 import org.dbpedia.extraction.util.Language
 
@@ -37,5 +37,7 @@ trait DumpExtractionContextOWL
     def redirects : Redirects
 
     def disambiguations : Disambiguations
+
+    def prefixConverter : OWLPrefixConverter
 }
 
