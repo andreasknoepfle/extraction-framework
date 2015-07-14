@@ -14,17 +14,16 @@ object MappingsOwlDownloader {
   val parser = WikiParser.getInstance()
   val manager = OWLManager.createOWLOntologyManager()
   //	    // load the importing ontology
-  val ontology = manager.loadOntologyFromOntologyDocument(new File("owlfile.owl"))
-  val prefixManager = new OWLPrefixConverter(ontology).getPrefixManager()
+
 
   def main(args: Array[String]): Unit = {
-    require(args != null && args.length == 1, "expected one argument for mappings target directory")
+    require(args != null && args.length == 2, "USAGE: MappingsOwlDownloader downloadDirectory ontologyFileOWL")
     val dir = new File(args(0))
 
     // don't use mkdirs, that often masks mistakes.
     require(dir.isDirectory || dir.mkdir, "directory [" + dir + "] does not exist and cannot be created")
 
-
+    val ontology = manager.loadOntologyFromOntologyDocument(new File(args(1)))
     downloadMappings(dir, ontology)
   }
 
@@ -33,8 +32,8 @@ object MappingsOwlDownloader {
       val language = namespace.name(Language.Mappings)
       val file = new File(dir, language.replace(' ', '_') + ".owl")
       val mappingPageSource = WikiSource.fromNamespaces(Set(namespace), new URL(apiUrl), Language.Mappings)
-
       val mappingOntology = new MappingOntology(language,file)
+      val prefixManager = new OWLPrefixConverter(ontology).getPrefixManager()
 
       println("Downloading Owl: " + namespace.name(Language.Mappings))
       mappingPageSource.map(parser).flatten.foreach {
