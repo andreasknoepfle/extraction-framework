@@ -87,8 +87,6 @@ object MappingSchemaOntology {
 
 class MappingOntology(name: String, file: File)  {
 
-
-
   val manager = OWLManager.createOWLOntologyManager
   val ontology_iri = IRI.create("http://dbpedia.org/mappings/" + name.replace(" ","_"))
   val ontology = if (file.exists) { manager.loadOntologyFromOntologyDocument(file) } else { manager.createOntology(ontology_iri) }
@@ -101,6 +99,13 @@ class MappingOntology(name: String, file: File)  {
     owlxmlformat.setDefaultPrefix("http://dbpedia.org/mappings/")
     manager.saveOntology(ontology, owlxmlformat ,
       IRI.create(file))
+  }
+
+  def getMappingLabel(mapping: OWLClass): String = {
+    mapping.getAnnotations(ontology,factory.getRDFSLabel).headOption match {
+      case Some(label) => label.getValue.asInstanceOf[OWLLiteral].getLiteral
+      case None => mapping.getIRI.getShortForm
+    }
   }
 
   def getClassMappings(): Set[OWLClass] = {

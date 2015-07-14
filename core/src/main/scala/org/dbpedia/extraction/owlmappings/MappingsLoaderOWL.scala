@@ -35,7 +35,7 @@ object MappingsLoaderOWL {
 
     for (mapping <- owlClassMappings) {
       try {
-        classMappings(mapping.getIRI().getShortForm) =
+        classMappings(context.mappingOntology.getMappingLabel(mapping)) =
           context.mappingOntology.getClassMappingType(mapping) match {
           case "TemplateMapping" =>
             loadTemplateMapping(mapping, context)
