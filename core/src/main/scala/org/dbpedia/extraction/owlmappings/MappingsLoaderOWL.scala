@@ -35,7 +35,8 @@ object MappingsLoaderOWL {
 
     for (mapping <- owlClassMappings) {
       try {
-        context.mappingOntology.getClassMappingType(mapping) match {
+        classMappings(mapping.getIRI().getShortForm) =
+          context.mappingOntology.getClassMappingType(mapping) match {
           case "TemplateMapping" =>
             loadTemplateMapping(mapping, context)
           case "ConditionalMapping" =>
@@ -47,7 +48,7 @@ object MappingsLoaderOWL {
       }
     }
 
-    logger.info("Mappings loaded (" + context.language.wikiCode + ")")
+    logger.info("Mappings loaded (" + context.language.wikiCode + "): " + classMappings.size)
 
     new Mappings(classMappings.toMap, tableMappings.toList)
   }

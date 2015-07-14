@@ -37,6 +37,7 @@ class OntologyReaderOWL(owlOntology : OWLOntology) extends OntologyReader {
     ontologyBuilder.properties ::= new PropertyBuilder("rdfs:label", Map(Language.Mappings -> "has label"), Map(), false, false, "owl:Thing", "rdf:langString", Set())
     ontologyBuilder.properties ::= new PropertyBuilder("rdfs:comment", Map(Language.Mappings -> "has comment"), Map(), false, false, "owl:Thing", "rdf:langString", Set())
 
+    // Import Classes from signature
     for ( cls <- owlOntology.getClassesInSignature) {
       val name = prefixManager.getPrefixIRI(cls.getIRI())
       if(name != null) {
@@ -52,25 +53,26 @@ class OntologyReaderOWL(owlOntology : OWLOntology) extends OntologyReader {
         case Some(cls) => prefixManager.getPrefixIRIorOWLThing(cls.asOWLClass().getIRI)
         case None => "owl:Thing"
       }
-      if(name != null) {
+      if(name != null) { // The property has a dbpedia prefix short form
         val range = prop.getRanges(owlOntology).headOption match {
           case Some(cls) => prefixManager.getPrefixIRIorOWLThing(cls.asOWLClass().getIRI)
           case None => "owl:Thing"
         }
-        val isDBPediaDatatype = range.startsWith("dbodt:")
+        val isDBpediaDatatype = range.startsWith("dbodt:")
         val property = new PropertyBuilder(
           name,
           readAnnotationsByLanguage(prop, "rdfs:label") ++ readAnnotationsByLanguage(prop, "label"),
           readAnnotationsByLanguage(prop, "rdfs:comment") ++ readAnnotationsByLanguage(prop, "comment"),
-          !isDBPediaDatatype && !datatypeMap.contains(range), // if it is a dbpedia datatype property, create a datatypeproperty
+          !isDBpediaDatatype && !datatypeMap.contains(range), // if it is a dbpedia datatype property, create a datatypeproperty
           prop.isFunctional(owlOntology),
           domain,
-          if(isDBPediaDatatype) cutDatatypePrefix(range) else range,
+          if(isDBpediaDatatype) cutDatatypePrefix(range) else range,
           convertObjectProperties(prop.getEquivalentProperties(owlOntology)),
           convertObjectProperties(prop.getSuperProperties(owlOntology)))
         ontologyBuilder.properties ::= property
         updateEquivalentProperties(ontologyBuilder, property)
       } else if (isSpecificProperty(prop)) {
+        // Specific properties do not generate a short form
         ontologyBuilder.specializedProperties ::= new SpecificPropertyBuilder(
           domain,
           prop.getIRI.getShortForm,
@@ -80,7 +82,7 @@ class OntologyReaderOWL(owlOntology : OWLOntology) extends OntologyReader {
     }
 
     for(prop <- owlOntology.getDataPropertiesInSignature ) {
-      if (!isSpecificProperty(prop)) {
+      if (!isSpecificProperty(prop) && !isObjectProperty(prop.getIRI)) {
         val datatype = prop.getRanges(owlOntology).headOption
         if(datatype.isEmpty) {
           logger.warning(prop.getIRI + " - Cannot load datatype property " + prop.getIRI  + " because it does not define its range")
@@ -105,6 +107,10 @@ class OntologyReaderOWL(owlOntology : OWLOntology) extends OntologyReader {
     }
 
     ontologyBuilder.build()
+  }
+
+  def isObjectProperty(iri: IRI): Boolean = {
+    owlOntology.containsObjectPropertyInSignature(iri)
   }
 
   def cutDatatypePrefix(dt: String): String = {
